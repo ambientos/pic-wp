@@ -1,0 +1,211 @@
+# Copyright (C) 2013 the WordPress team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: AG Pic Site Plugin 1.0\n"
+"POT-Creation-Date: 2019-08-11 04:21+0300\n"
+"PO-Revision-Date: 2019-08-11 04:26+0300\n"
+"Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_c;__ngettext:1,2;_n:1,2;_x:1,2c;_nx:4c,1,2;"
+"_esc_attr__;esc_html__;esc_html_e;esc_html_x\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: core/Plugin.php:62 core/Plugin.php:73
+msgctxt "picsite site"
+msgid "Service Categories"
+msgstr "Категории услуг"
+
+#: core/Plugin.php:63
+msgctxt "picsite site"
+msgid "Service Category"
+msgstr "Категория услуг"
+
+#: core/Plugin.php:64
+msgid "Search Category"
+msgstr "Найти категорию"
+
+#: core/Plugin.php:65
+msgid "All Categories"
+msgstr "Все категории"
+
+#: core/Plugin.php:66
+msgid "View Category"
+msgstr "Просмотреть категорию"
+
+#: core/Plugin.php:67
+msgid "Parent Category"
+msgstr "Родительская категория"
+
+#: core/Plugin.php:68
+msgid "Parent Category:"
+msgstr "Родительская категория:"
+
+#: core/Plugin.php:69
+msgid "Edit Category"
+msgstr "Редактировать категорию"
+
+#: core/Plugin.php:70
+msgid "Update Category"
+msgstr "Обновить категорию"
+
+#: core/Plugin.php:71
+msgid "Add New Category"
+msgstr "Добавить новую категорию"
+
+#: core/Plugin.php:72
+msgid "New Category Name"
+msgstr "Новое имя категории"
+
+#: core/Plugin.php:88 core/Plugin.php:98
+msgctxt "picsite site"
+msgid "Services"
+msgstr "Услуги"
+
+#: core/Plugin.php:89
+msgctxt "picsite site"
+msgid "Service"
+msgstr "Услуга"
+
+#: core/Plugin.php:90
+msgid "Add New Post"
+msgstr "Добавить новую запись"
+
+#: core/Plugin.php:91
+msgid "Add New Post item"
+msgstr "Добавить новую запись"
+
+#: core/Plugin.php:92
+msgid "Edit Post Item"
+msgstr "Редактировать запись"
+
+#: core/Plugin.php:93
+msgid "New Post Item"
+msgstr "Новая запись"
+
+#: core/Plugin.php:94
+msgid "View Post Item"
+msgstr "Просмотреть запись"
+
+#: core/Plugin.php:95
+msgid "Search Post"
+msgstr "Найти запись"
+
+#: core/Plugin.php:96
+msgid "Nothing found Services"
+msgstr "Не найдено ни одной услуги"
+
+#: core/Plugin.php:97
+msgid "Nothing found Services in Trash"
+msgstr "Не найдено ни одной услуги в корзине"
+
+#: core/Plugin.php:116 core/Plugin.php:126
+msgctxt "picsite site"
+msgid "Products"
+msgstr "Продукция"
+
+#: core/Plugin.php:117
+msgctxt "picsite site"
+msgid "Product"
+msgstr "Товар"
+
+#: core/Plugin.php:118
+msgid "Add New Product"
+msgstr "Добавить новый товар"
+
+#: core/Plugin.php:119
+msgid "Add New Product item"
+msgstr "Добавить новый товар"
+
+#: core/Plugin.php:120
+msgid "Edit Product Item"
+msgstr "Редактировать товар"
+
+#: core/Plugin.php:121
+msgid "New Product Item"
+msgstr "Новый товар"
+
+#: core/Plugin.php:122
+msgid "View Product Item"
+msgstr "Посмотреть товар"
+
+#: core/Plugin.php:123
+msgid "Search Product"
+msgstr "Найти товар"
+
+#: core/Plugin.php:124
+msgid "Nothing found Products"
+msgstr "Не найдено ни одного товара"
+
+#: core/Plugin.php:125
+msgid "Nothing found Products in Trash"
+msgstr "Не найдено ни одного товара в корзине"
+
+#: core/Plugin.php:149
+msgid "Site Options"
+msgstr "Опции сайта"
+
+#: core/Plugin.php:153
+msgid "Metrics / Advertising"
+msgstr "Метрика / Реклама"
+
+#: core/Plugin.php:155
+msgid "Metric's Code in head-tag"
+msgstr "Metric’s Code in head-tag"
+
+#: core/Plugin.php:159
+msgid "Body before Content"
+msgstr "Body before Content"
+
+#: core/Plugin.php:163
+msgid "Analytic's Code (like Google Analytics, etc.)"
+msgstr "Analytic’s Code (like Google Analytics, etc.)"
+
+#: core/Plugin.php:170
+msgid "Product attributes"
+msgstr "Атрибуты товара"
+
+#: core/Plugin.php:175 core/Plugin.php:188
+msgid "List"
+msgstr "Список"
+
+#: core/Plugin.php:177
+msgid "Item"
+msgstr "Элемент"
+
+#: core/Plugin.php:190
+msgid "Thumbnail"
+msgstr "Изображение"
+
+#: core/Plugin.php:191 core/Plugin.php:232 core/Plugin.php:253
+msgid "Title"
+msgstr "Заголовок"
+
+#: core/Plugin.php:192
+msgid "More Link"
+msgstr "Ссылка подробнее"
+
+#: core/Plugin.php:193 core/Plugin.php:233
+msgid "Content"
+msgstr "Контент"
+
+#: core/Plugin.php:218
+msgid "More"
+msgstr "Подробнее"
+
+#: core/Plugin.php:254
+msgid "Images"
+msgstr "Изображения"
+
+#: core/Plugin.php:344
+msgid "Product slider"
+msgstr ""
