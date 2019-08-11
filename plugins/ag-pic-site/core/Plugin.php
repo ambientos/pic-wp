@@ -143,9 +143,11 @@ class Plugin {
 	 * Carbon Fields init
 	 */
 	public static function carbon_fields_register_fields() {
+
 		/**
 		 * Theme Options
 		 */
+
 		Container::make( 'theme_options', __( 'Site Options', TEXT_DOMAIN ) )
 			->set_icon('dashicons-hammer')
 
@@ -167,6 +169,7 @@ class Plugin {
 		/**
 		 * Product
 		 */
+
 		Container::make( 'post_meta', __( 'Product attributes', TEXT_DOMAIN ) )
 			->where( 'post_type', 'IN', array( 'pic-product' ) )
 			->set_context( 'carbon_fields_after_title' )
