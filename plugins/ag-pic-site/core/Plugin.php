@@ -36,13 +36,6 @@ class Plugin {
 	 */
 	public static function plugins_loaded() {
 		/**
-		 * Check user capabilites
-		 */
-		if ( ! current_user_can( 'activate_plugins' ) ) {
-			return;
-		}
-
-		/**
 		 * Load translations for this plugin
 		 */
 		load_textdomain( TEXT_DOMAIN, PLUGIN_FOLDER . '/languages/' . TEXT_DOMAIN . '-' . get_locale() . '.mo' );
@@ -54,8 +47,8 @@ class Plugin {
 	public static function register_cpt_ct() {
 		register_taxonomy( 'pic-service-category', array(), array(
 			'labels'                => array(
-				'name'              => _x( 'Service Categories', 'picsite site', TEXT_DOMAIN ),
-				'singular_name'     => _x( 'Service Category', 'picsite site', TEXT_DOMAIN ),
+				'name'              => __( 'Service Categories', TEXT_DOMAIN ),
+				'singular_name'     => __( 'Service Category', TEXT_DOMAIN ),
 				'search_items'      => __( 'Search Category', TEXT_DOMAIN ),
 				'all_items'         => __( 'All Categories', TEXT_DOMAIN ),
 				'view_item '        => __( 'View Category', TEXT_DOMAIN ),
@@ -65,7 +58,7 @@ class Plugin {
 				'update_item'       => __( 'Update Category', TEXT_DOMAIN ),
 				'add_new_item'      => __( 'Add New Category', TEXT_DOMAIN ),
 				'new_item_name'     => __( 'New Category Name', TEXT_DOMAIN ),
-				'menu_name'         => _x( 'Service Categories', 'picsite site', TEXT_DOMAIN ),
+				'menu_name'         => __( 'Service Categories', TEXT_DOMAIN ),
 			),
 			'publicly_queryable'    => true,
 			'show_in_rest'          => true,
@@ -80,8 +73,8 @@ class Plugin {
 
 		register_post_type( 'pic-services', array(
 			'labels' => array(
-				'name'               => _x( 'Services', 'picsite site', TEXT_DOMAIN ),
-				'singular_name'      => _x( 'Service', 'picsite site', TEXT_DOMAIN ),
+				'name'               => __( 'Services', TEXT_DOMAIN ),
+				'singular_name'      => __( 'Service', TEXT_DOMAIN ),
 				'add_new'            => __( 'Add New Post', TEXT_DOMAIN ),
 				'add_new_item'       => __( 'Add New Post item', TEXT_DOMAIN ),
 				'edit_item'          => __( 'Edit Post Item', TEXT_DOMAIN ),
@@ -90,7 +83,7 @@ class Plugin {
 				'search_items'       => __( 'Search Post', TEXT_DOMAIN ),
 				'not_found'          => __( 'Nothing found Services', TEXT_DOMAIN ),
 				'not_found_in_trash' => __( 'Nothing found Services in Trash', TEXT_DOMAIN ),
-				'menu_name'          => _x( 'Services', 'picsite site', TEXT_DOMAIN ),
+				'menu_name'          => __( 'Services', TEXT_DOMAIN ),
 			),
 			'public'              => true,
 			'show_in_rest'        => true,
@@ -108,8 +101,8 @@ class Plugin {
 
 		register_post_type( 'pic-product', array(
 			'labels' => array(
-				'name'               => _x( 'Products', 'picsite site', TEXT_DOMAIN ),
-				'singular_name'      => _x( 'Product', 'picsite site', TEXT_DOMAIN ),
+				'name'               => __( 'Products', TEXT_DOMAIN ),
+				'singular_name'      => __( 'Product', TEXT_DOMAIN ),
 				'add_new'            => __( 'Add New Product', TEXT_DOMAIN ),
 				'add_new_item'       => __( 'Add New Product item', TEXT_DOMAIN ),
 				'edit_item'          => __( 'Edit Product Item', TEXT_DOMAIN ),
@@ -118,7 +111,7 @@ class Plugin {
 				'search_items'       => __( 'Search Product', TEXT_DOMAIN ),
 				'not_found'          => __( 'Nothing found Products', TEXT_DOMAIN ),
 				'not_found_in_trash' => __( 'Nothing found Products in Trash', TEXT_DOMAIN ),
-				'menu_name'          => _x( 'Products', 'picsite site', TEXT_DOMAIN ),
+				'menu_name'          => __( 'Products', TEXT_DOMAIN ),
 			),
 			'public'              => true,
 			'show_in_rest'        => false,
