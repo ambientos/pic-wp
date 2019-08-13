@@ -1,0 +1,47 @@
+.pagination {
+	$color-hover: $link-hover-color;
+
+	margin-top: 2em;
+	text-align: center;
+
+	.page-numbers {
+		display: inline-block;
+		margin: 1em .5em 0;
+		padding: .25em .65em;
+		font-weight: $font-weight-medium;
+
+		&:not(.dots),
+		&.current {
+			border: {
+				width: 1px;
+				style: solid;
+			}
+		}
+
+		&.current {
+			color: $white;
+			border-color: $color-hover;
+			background-color: $color-hover;
+		}
+
+		&.dots {
+			padding: .25em 0;
+		}
+	}
+
+	a {
+		$color: $gray-500;
+
+		color: $color;
+		border-color: $color;
+
+		&:hover {
+			$color: $white;
+
+			text-decoration: none;
+			color: $color-hover;
+			border-color: $color;
+			background-color: $color;
+		}
+	}
+}

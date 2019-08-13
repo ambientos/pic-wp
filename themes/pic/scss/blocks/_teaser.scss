@@ -1,0 +1,44 @@
+.teaser {
+	&._featured {
+		color: $white;
+		background-color: $blue;
+	}
+
+	&-thumb {
+		margin-bottom: 0;
+	}
+
+	&-content {
+		$padding: $grid-gutter-width;
+
+		@include media-breakpoint-down("md") {
+			padding-top: $padding;
+		}
+
+		&._featured {
+			padding: $padding * .8 $padding;
+			font-size: 1.125rem;
+
+			@include media-breakpoint-up("lg") {
+				padding-left: 0;
+			}
+		}
+	}
+
+	&-title {
+		margin: .3em 0 1.5em;
+	}
+
+	&-num {
+		font: {
+			size: 4rem;
+			weight: $font-weight-bold;
+		}
+		text-shadow:
+			-1px -1px 0 $body-color,
+			1px -1px 0 $body-color,
+			-1px 1px 0 $body-color,
+			1px 1px 0 $body-color;
+		color: $body-bg;
+	}
+}

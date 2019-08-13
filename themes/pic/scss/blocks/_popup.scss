@@ -1,0 +1,41 @@
+.popup {
+	&-callback {
+		padding: 0;
+		overflow: hidden;
+
+		@include media-breakpoint-up("xl") {
+			min-width: 1110px;
+		}
+
+		&-form {
+			padding: 1.5em 1em 1.5em 2em;
+
+			@include media-breakpoint-down("lg") {
+				padding-right: 2em;
+			}
+		}
+
+		&-title::after {
+			margin-bottom: 1em;
+		}
+
+		&-thumb {
+			background: {
+				repeat: no-repeat;
+				position: 50% 50%;
+				size: cover;
+			}
+		}
+
+		&-accept {
+			margin-top: 1em;
+			color: $gray-600;
+		}
+
+		.fancybox-button path {
+			@include media-breakpoint-up("xl") {
+				fill: $white;
+			}
+		}
+	}
+}

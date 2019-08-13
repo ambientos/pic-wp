@@ -1,0 +1,190 @@
+.header {
+	background-color: $white;
+
+	@include media-breakpoint-up("xl") {
+		max-width: 1920px;
+		margin: auto;
+	}
+
+	&-logo {
+		$size: 142px;
+
+		flex-basis: $size;
+		max-width: $size;
+		padding: .5em 0;
+
+		@include media-breakpoint-up("md") {
+			$size: 19%;
+
+			flex-basis: $size;
+			max-width: $size;
+		}
+
+		@include media-breakpoint-down("sm") {
+			margin-left: $grid-gutter-width * .5;
+		}
+	}
+
+	&-menu {
+		width: 100%;
+		margin-bottom: 0;
+		padding-right: $grid-gutter-width * .5;
+
+		&-container {
+			flex: {
+				basis: 0;
+				grow: 1;
+			}
+		}
+
+		&-nav {
+			width: 100%;
+		}
+
+		&-toggle {
+			$size: $grid-gutter-width;
+
+			display: block;
+			width: $size;
+			height: $size;
+			border: none;
+			background: {
+				color: transparent;
+				repeat: no-repeat;
+				position: 0 -2px;
+				image: url("data:image/svg+xml;charset=utf8,%3Csvg width='30' height='30' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cpath id='svg_1' d='m4,10l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2zm24,4l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2zm0,8l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2z' fill='%230365C0'/%3E%3C/g%3E%3C/svg%3E");
+				size: 100% auto;
+			}
+
+			&-container {
+				margin-right: $grid-gutter-width * .5;
+			}
+
+			&-label {
+				margin-right: 1em;
+				text-transform: uppercase;
+			}
+		}
+
+		li {
+			&.current-menu-item a {
+				color: $white;
+				text-decoration: none;
+				background-color: $blue;
+			}
+		}
+
+		a {
+			display: block;
+			padding: 1.85em .5em;
+			text-align: center;
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+				color: $link-hover-color;
+			}
+		}
+	}
+
+	&-callback {
+		$size: 22%;
+
+		flex-basis: $size;
+		max-width: $size;
+		text-align: center;
+		color: $white;
+		cursor: pointer;
+		background-color: $blue;
+		@include transition;
+
+		&:hover {
+			background: darken( grayscale($blue), 15%);
+		}
+
+		@include media-breakpoint-down("sm") {
+			$width: 100%;
+
+			flex-basis: $width;
+			max-width: $width;
+			min-height: $grid-gutter-width * 1.5;
+		}
+
+		&-l {
+			font-weight: $font-weight-medium;
+			text-transform: uppercase;
+
+			@include media-breakpoint-up("xl") {
+				display: block;
+			}
+
+			&::before {
+				$size: $grid-gutter-width * .5;
+
+				display: inline-block;
+				width: $size;
+				height: $size;
+				margin-right: 1em;
+				content: '';
+				background: {
+					image: url('#{$img-dir}tel.svg');
+					position: 50% 50%;
+					size: contain;
+				}
+			}
+		}
+	}
+
+	&-title {
+		position: relative;
+		font: {
+			size: 1.5rem;
+			weight: $font-weight-bold;
+		}
+		color: $white;
+		text: {
+			align: center;
+			transform: uppercase;
+		}
+
+		@include media-breakpoint-up("sm") {
+			text-align: left;
+		}
+
+		@include media-breakpoint-between("md", "lg") {
+			font-size: 3rem;
+		}
+
+		@include media-breakpoint-up("xl") {
+			font-size: 4.5rem;
+		}
+
+		&-container {
+			position: relative;
+			padding: 2em 0;
+			background: {
+				repeat: no-repeat;
+				position: 50% 50%;
+				size: cover;
+			}
+
+			@include media-breakpoint-between("md", "lg") {
+				padding: 4em 0;
+			}
+
+			@include media-breakpoint-up("xl") {
+				padding: 4.8em 0;
+			}
+
+			&::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				content: '';
+				background-color: rgba($blue, .7);
+			}
+		}
+	}
+}

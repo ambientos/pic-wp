@@ -1,0 +1,129 @@
+.promo {
+	$bg-color: darken($blue, 25%);
+
+	&-container {
+		position: relative;
+	}
+
+	&-nav {
+		counter-reset: nav-list;
+
+		&-container {
+			position: absolute;
+			left: 0;
+			top: 30px;
+			right: 0;
+			z-index: 2;
+
+			@include media-breakpoint-between("md", "lg") {
+				top: 80px;
+			}
+			
+			@include media-breakpoint-up("xl") {
+				top: 230px;
+			}
+		}
+
+		button {
+			margin: 0 $grid-gutter-width * .3;
+			padding: .14em .51em;
+			color: $white;
+			border: 1px solid $white;
+			background: none;
+
+			&:first-child,
+			&.active:first-child {
+				margin-left: 0;
+			}
+
+			&.active {
+				margin: 0 .5em;
+				border: none;
+
+				@include media-breakpoint-up("lg") {
+					margin: 0 2em;
+				}
+
+				span::before {
+					font-size: 4em;
+					color: $bg-color;
+					content: counter(nav-list, decimal-leading-zero);
+					text-shadow:
+						-1px -1px 0 $white,
+						1px -1px 0 $white,
+						-1px 1px 0 $white,
+						1px 1px 0 $white;
+
+					@include media-breakpoint-up("lg") {
+						font-size: 6em;
+					}
+				}
+			}
+
+			span::before {
+				line-height: 1;
+				counter-increment: nav-list;
+				content: counter(nav-list);
+			}
+		}
+	}
+
+	&-item {
+		min-height: 500px;
+		padding-top: 130px;
+		color: $white;
+		background: {
+			color: $bg-color;
+			repeat: no-repeat;
+			position: 50% 50%;
+			size: cover;
+		}
+
+		@include media-breakpoint-between("md", "lg") {
+			min-height: 600px;
+			padding-top: 200px;
+		}
+
+		@include media-breakpoint-up("xl") {
+			min-height: 1010px;
+			padding-top: 360px;
+		}
+
+		&-title {
+			font: {
+				size: 1.875rem;
+				weight: $font-weight-bold;
+			}
+			text-transform: uppercase;
+
+			@include media-breakpoint-between("md", "lg") {
+				font-size: 3em;
+			}
+
+			@include media-breakpoint-up("xl") {
+				font-size: 4.5rem;
+			}
+
+			&::after {
+				display: block;
+				width: 75px;
+				margin: .4em 0 .8em;
+				content: '';
+				border-top: 2px solid $white;
+			}
+		}
+
+		&-info {
+			max-width: 700px;
+			font-size: 1rem;
+
+			@include media-breakpoint-up("lg") {
+				font-size: 1.5rem;
+			}
+		}
+
+		&-more {
+			margin-top: 3em;
+		}
+	}
+}

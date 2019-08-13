@@ -1,0 +1,28 @@
+@mixin icons($type: blue, $size: 18px, $padding: $grid-gutter-width * 1.1){
+	& {
+		position: relative;
+		padding-left: $padding;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			top: .1em;
+			bottom: 0;
+			width: $size;
+			height: $size;
+			content: '';
+			background: {
+				repeat: no-repeat;
+				size: contain;
+			}
+		}
+
+		@each $ico in $icons {
+			&._#{$ico}-#{$type} {
+				&::before {
+					background-image: url('#{$img-dir}#{$ico}-#{$type}.svg');
+				}
+			}
+		}
+	}
+}

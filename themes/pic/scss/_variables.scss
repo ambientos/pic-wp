@@ -1,0 +1,28 @@
+//
+// Image Directory
+//
+
+$img-dir: '../i/';
+
+
+//
+// Fonts Variables
+//
+
+$font-dir:	 '../fonts/';
+
+$font-main:  'HelveticaNeue';
+
+$fonts:	(
+	( $font-main, 'regular', normal, 400, 20190801 ),
+	( $font-main, 'italic',  italic, 400, 20190801 ),
+	( $font-main, 'medium',  normal, 500, 20190801 ),
+	( $font-main, 'bold',    normal, 700, 20190801 ),
+	( $font-main, 'black',   normal, 900, 20190801 ),
+);
+
+//
+// Icons
+//
+
+$icons: (mail, tel, mark);

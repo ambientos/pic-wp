@@ -1,0 +1,35 @@
+.nav {
+	&-sub {
+		margin-bottom: 4em;
+		background-color: $white;
+
+		@include media-breakpoint-down("lg") {
+			flex-wrap: wrap;
+		}
+
+		li {
+			font-size: .75rem;
+			text-transform: uppercase;
+
+			&.active {
+				font: {
+					size: .875rem;
+					weight: $font-weight-bold;
+				}
+
+				a:hover {
+					text-decoration: none;
+				}
+			}
+
+			&:not(.active) > a {
+				color: inherit;
+			}
+		}
+
+		a {
+			display: block;
+			padding: 1em .8em;
+		}
+	}
+}

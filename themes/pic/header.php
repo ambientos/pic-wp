@@ -20,7 +20,7 @@
 				<nav class="header-menu-nav d-xl-block d-none">
 					<?php wp_nav_menu( array(
 						'theme_location' => 'main_menu',
-						'menu_class'     => 'header-menu list-unstyled',
+						'menu_class'     => 'd-flex justify-content-around header-menu list-unstyled',
 						'item_spacing'   => 'discard',
 						'container'      => false,
 					) ); ?>

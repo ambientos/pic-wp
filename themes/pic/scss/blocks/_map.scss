@@ -1,0 +1,64 @@
+.map {
+	&-container,
+	&-content {
+		position: relative;
+	}
+
+	&-object {
+		min-height: 600px;
+	}
+
+	&-content {
+		padding: 3.5em 0;
+		color: $white;
+		background-color: $blue;
+
+		&::before {
+			position: absolute;
+			left: -9999px;
+			top: 0;
+			right: 100%;
+			bottom: 0;
+			content: '';
+			background-color: $blue;
+		}
+
+		&-container {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		a {
+			color: $white;
+		}
+	}
+
+	&-title {
+		font: {
+			size: 1.5rem;
+			weight: $font-weight-medium;
+		}
+		text-transform: uppercase;
+	}
+
+	&-contacts {
+		margin-top: 4.5em;
+
+		&-item {
+			margin: 1.5em 0;
+			font: {
+				size: 1rem;
+				weight: $font-weight-medium;
+			}
+
+			@include media-breakpoint-up("lg") {
+				font-size: 1.125rem;
+			}
+
+			@include icons(white, 15px, 2rem);
+		}
+	}
+}

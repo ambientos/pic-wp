@@ -1,0 +1,47 @@
+.clients {
+	background: {
+		repeat: no-repeat;
+		position: 50% 50%;
+		size: cover;
+	}
+
+	&-list {
+		&-item {
+			padding: .5em;
+			text-align: center;
+			color: $white;
+
+			@include media-breakpoint-down("sm") {
+				&:first-child {
+					padding-top: 2em;
+				}
+			}
+
+			@include media-breakpoint-between("md", "lg") {
+				padding: 3.5em 2em 2em;
+			}
+
+			@include media-breakpoint-up("xl") {
+				padding: 6em 2em 2em;
+			}
+
+			&-thumb {
+				margin-bottom: 1em;
+
+				@include media-breakpoint-up("lg") {
+					margin-bottom: 3em;
+				}
+			}
+
+			&-name {
+				margin: 2em 0;
+				font-weight: $font-weight-bold;
+				text-transform: uppercase;
+
+				@include media-breakpoint-up("lg") {
+					margin-top: 4em;
+				}
+			}
+		}
+	}
+}

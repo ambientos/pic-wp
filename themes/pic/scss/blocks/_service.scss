@@ -1,0 +1,65 @@
+.service {
+	&-list {
+		&-item {
+			display: block;
+			position: relative;
+			padding: $grid-gutter-width * .6;
+			color: inherit;
+			background-color: $white;
+			@include transition;
+
+			&:hover {
+				color: white;
+				text-decoration: none;
+				background-color: $blue;
+			}
+
+			&-thumb {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 0;
+				background: {
+					position: 50% 50%;
+					repeat: no-repeat;
+					size: cover;
+				}
+				@include transition;
+
+				:hover > & {
+					opacity: .1;
+				}
+			}
+
+			&-title,
+			&-text,
+			&-more {
+				position: relative;
+			}
+
+			&-title {
+				margin-bottom: 1.5em;
+				font: {
+					size: .875rem;
+					weight: $font-weight-bold;
+				}
+				text-transform: uppercase;
+
+				@include media-breakpoint-up("md") {
+					min-height: 3.6em;
+				}
+			}
+
+			&-more {
+				color: $blue;
+				@include transition;
+
+				:hover > & {
+					color: $white;
+				}
+			}
+		}
+	}
+}

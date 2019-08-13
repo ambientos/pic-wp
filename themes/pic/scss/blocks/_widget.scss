@@ -1,0 +1,62 @@
+@mixin widget-margins($margin){
+	margin-top: $margin;
+
+	&:not(:last-child) {
+		margin-bottom: $margin;
+	}
+}
+
+.widget {
+	@include widget-margins(3em);
+
+	@include media-breakpoint-between("md", "lg") {
+		top: 80px;
+
+		@include widget-margins(4em);
+	}
+
+	@include media-breakpoint-up("xl") {
+		top: 230px;
+
+		@include widget-margins(14em);
+	}
+
+	&-title {
+		font: {
+			size: 1.375rem;
+			weight: $font-weight-bold;
+		}
+		text: {
+			align: center;
+			transform: uppercase;
+		}
+
+		@include media-breakpoint-up("sm") {
+			text-align: left;
+		}
+
+		@include media-breakpoint-between("md", "lg") {
+			font-size: 1.75rem;
+		}
+
+		@include media-breakpoint-up("xl") {
+			font-size: 2.25rem;
+		}
+
+		&::after {
+			display: block;
+			margin: .3em auto .6em;
+			content: '';
+			width: $grid-gutter-width;
+			border-top: 6px solid $blue;
+
+			@include media-breakpoint-up("sm") {
+				margin-left: 0;
+			}
+
+			@include media-breakpoint-up("lg") {
+				margin: .6em 0 1.8em;
+			}
+		}
+	}
+}
