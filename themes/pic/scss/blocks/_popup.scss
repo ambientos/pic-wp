@@ -30,6 +30,10 @@
 		&-accept {
 			margin-top: 1em;
 			color: $gray-600;
+
+			a {
+				text-decoration: underline;
+			}
 		}
 
 		.fancybox-button path {

@@ -753,6 +753,8 @@
         margin-bottom: 2.5em; } }
   .contact-form-accept {
     margin-top: 1em; }
+    .contact-form-accept a {
+      text-decoration: underline; }
   .contact-form .form-control {
     border-color: transparent; }
   .contact-form a {
@@ -1007,6 +1009,8 @@
   .popup-callback-accept {
     margin-top: 1em;
     color: #6c757d; }
+    .popup-callback-accept a {
+      text-decoration: underline; }
   @media (min-width: 1200px) {
     .popup-callback .fancybox-button path {
       fill: #fff; } }

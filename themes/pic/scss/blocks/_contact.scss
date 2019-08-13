@@ -46,6 +46,10 @@
 
 		&-accept {
 			margin-top: 1em;
+
+			a {
+				text-decoration: underline;
+			}
 		}
 
 		.form-control {
