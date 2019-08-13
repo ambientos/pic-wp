@@ -43,11 +43,6 @@ class Plugin {
 		}
 
 		/**
-		 * Add custom image sizes
-		 */
-		add_image_size( 'grid-thumb', 255, 255 );
-
-		/**
 		 * Load translations for this plugin
 		 */
 		load_textdomain( TEXT_DOMAIN, PLUGIN_FOLDER . '/languages/' . TEXT_DOMAIN . '-' . get_locale() . '.mo' );
