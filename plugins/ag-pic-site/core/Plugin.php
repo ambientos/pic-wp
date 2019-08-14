@@ -36,6 +36,11 @@ class Plugin {
 	 */
 	public static function plugins_loaded() {
 		/**
+		 * Add image sizes
+		 */
+		add_image_size( 'client-thumb', 140, 140, false );
+
+		/**
 		 * Load translations for this plugin
 		 */
 		load_textdomain( TEXT_DOMAIN, PLUGIN_FOLDER . '/languages/' . TEXT_DOMAIN . '-' . get_locale() . '.mo' );
@@ -261,6 +266,49 @@ class Plugin {
 					</div>
 				</div>
 				<?php echo $block['cw-c']; ?>
+			</section>
+
+			<?php
+		} );
+
+
+		Block::make( 'Clients' )
+			->add_fields( array(
+				Field::make( 'text', 'cl-t', __( 'Title', TEXT_DOMAIN ) ),
+				Field::make( 'image', 'cl-i', __( 'Background', TEXT_DOMAIN ) ),
+				Field::make( 'complex', 'cl-l', __( 'List', TEXT_DOMAIN ) )
+					->add_fields( array(
+						Field::make( 'image', 'cl-l-i', __( 'Thumbnail', TEXT_DOMAIN ) ),
+						Field::make( 'text', 'cl-l-t', __( 'Title', TEXT_DOMAIN ) ),
+						Field::make( 'textarea', 'cl-l-c', __( 'Content', TEXT_DOMAIN ) )
+							->set_rows(5),
+					) )
+					->set_layout( 'tabbed-horizontal' ),
+			) )
+			->set_icon( 'id' )
+			->set_category( 'cb-blocks', 'Carbon Blocks' )
+			->set_render_callback( function ( $block ) { ?>
+
+			<section class="widget">
+				<div class="container">
+					<h2 class="widget-title"><?php echo esc_html( $block['cl-t'] ); ?></h2>
+				</div>
+				<?php $bg_full_arr = wp_get_attachment_image_src( $block['cl-i'], 'full' ); ?>
+				<div class="clients" style="background-image:url(<?php echo esc_url( $bg_full_arr[0] ); ?>)">
+					<div class="container">
+						<div class="clients-list row">
+							<?php foreach ( $block['cl-l'] as $client_item ) : ?>
+								<div class="clients-list-item col-md-3">
+									<figure class="clients-list-item-thumb"><?php echo wp_get_attachment_image( $client_item['cl-l-i'], 'client-thumb' ); ?></figure>
+									<div class="clients-list-item-name"><?php echo esc_html( $client_item['cl-l-t'] ); ?></div>
+									<div class="clients-list-item-info">
+										<?php echo $client_item['cl-l-c']; ?>
+									</div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<?php
