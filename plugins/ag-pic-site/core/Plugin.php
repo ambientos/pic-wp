@@ -144,6 +144,12 @@ class Plugin {
 		Container::make( 'theme_options', __( 'Site Options', TEXT_DOMAIN ) )
 			->set_icon('dashicons-hammer')
 
+			// Products
+			->add_tab( __( 'Products', TEXT_DOMAIN ), array(
+				// Header background image
+				Field::make( 'image', 'products-h-i', __( 'Header background image', TEXT_DOMAIN ) ),
+			) )
+
 			// Tech code
 			->add_tab( __( 'Metrics / Advertising', TEXT_DOMAIN ), array(
 				// Metrics code in <head>
@@ -234,9 +240,11 @@ class Plugin {
 			->set_render_callback( function ( $block ) { ?>
 
 			<section class="widget">
-				<div class="container">
-					<h2 class="widget-title"><?php echo esc_html( $block['cw-t'] ); ?></h2>
-				</div>
+				<?php if ( ! empty($block['cw-t']) ) : ?>
+					<div class="container">
+						<h2 class="widget-title"><?php echo esc_html( $block['cw-t'] ); ?></h2>
+					</div>
+				<?php endif; ?>
 				<?php echo $block['cw-c']; ?>
 			</section>
 
@@ -257,15 +265,14 @@ class Plugin {
 				<div class="container">
 					<h2 class="widget-title"><?php echo esc_html( $block['gt-t'] ); ?></h2>
 					<div class="row">
-						<?php foreach ( $block['cl-l'] as $thumb_id ) : ?>
+						<?php foreach ( $block['gt-l'] as $thumb_id ) : ?>
 							<?php $thumb_full_arr = wp_get_attachment_image_src( $thumb_id, 'full' ); ?>
 							<figure class="box-item col-xl-3 col-lg-4 col-md-6 d-sm-flex">
-								<a href="<?php echo esc_url( $thumb_full_arr[0] ); ?>"><?php echo wp_get_attachment_image( $thumb_id, 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?></a>
+								<a href="<?php echo esc_url( $thumb_full_arr[0] ); ?>" data-fancybox="thumbnails"><?php echo wp_get_attachment_image( $thumb_id, 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?></a>
 							</figure>
 						<?php endforeach; ?>
 					</div>
 				</div>
-				<?php echo $block['cw-c']; ?>
 			</section>
 
 			<?php

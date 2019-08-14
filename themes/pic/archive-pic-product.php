@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 
-<div class="header-title-container" style="background-image:url(t/12.jpg)">
+<?php
+
+$bg_header_thumb_id = carbon_get_theme_option( 'products-h-i' );
+$bg_header_thumb_arr = wp_get_attachment_image_src( $bg_header_thumb_id, 'full' );
+
+?>
+
+<div class="header-title-container" style="background-image:url(<?php echo esc_url( $bg_header_thumb_arr[0] ) ?>)">
 	<div class="container">
 		<h1 class="header-title"><?php post_type_archive_title(); ?></h1>
 	</div>

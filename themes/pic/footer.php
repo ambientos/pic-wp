@@ -23,7 +23,7 @@
 					</div>
 					<nav>
 						<?php wp_nav_menu( array(
-							'theme_location' => 'main_menu',
+							'theme_location' => 'sub_menu',
 							'menu_class'     => 'footer-menu-columns footer-menu list-unstyled',
 							'item_spacing'   => 'discard',
 							'container'      => false,

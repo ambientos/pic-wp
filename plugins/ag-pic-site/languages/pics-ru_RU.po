@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: AG Pic Site Plugin 1.0\n"
-"POT-Creation-Date: 2019-08-13 13:06+0300\n"
-"PO-Revision-Date: 2019-08-13 13:06+0300\n"
+"POT-Creation-Date: 2019-08-14 15:40+0300\n"
+"PO-Revision-Date: 2019-08-14 15:40+0300\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -20,186 +20,195 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: core/Plugin.php:57 core/Plugin.php:68
+#: core/Plugin.php:55 core/Plugin.php:66
 msgid "Service Categories"
 msgstr "Категории услуг"
 
-#: core/Plugin.php:58
+#: core/Plugin.php:56
 msgid "Service Category"
 msgstr "Категория услуги"
 
-#: core/Plugin.php:59
+#: core/Plugin.php:57
 msgid "Search Category"
 msgstr "Найти категорию"
 
-#: core/Plugin.php:60
+#: core/Plugin.php:58
 msgid "All Categories"
 msgstr "Все категории"
 
-#: core/Plugin.php:61
+#: core/Plugin.php:59
 msgid "View Category"
 msgstr "Просмотреть категорию"
 
-#: core/Plugin.php:62
+#: core/Plugin.php:60
 msgid "Parent Category"
 msgstr "Родительская категория"
 
-#: core/Plugin.php:63
+#: core/Plugin.php:61
 msgid "Parent Category:"
 msgstr "Родительская категория:"
 
-#: core/Plugin.php:64
+#: core/Plugin.php:62
 msgid "Edit Category"
 msgstr "Редактировать категорию"
 
-#: core/Plugin.php:65
+#: core/Plugin.php:63
 msgid "Update Category"
 msgstr "Обновить категорию"
 
-#: core/Plugin.php:66
+#: core/Plugin.php:64
 msgid "Add New Category"
 msgstr "Добавить новую категорию"
 
-#: core/Plugin.php:67
+#: core/Plugin.php:65
 msgid "New Category Name"
 msgstr "Новое имя категории"
 
-#: core/Plugin.php:83 core/Plugin.php:93
+#: core/Plugin.php:81 core/Plugin.php:91
 msgid "Services"
 msgstr "Услуги"
 
-#: core/Plugin.php:84
+#: core/Plugin.php:82
 msgid "Service"
 msgstr "Услуга"
 
-#: core/Plugin.php:85
+#: core/Plugin.php:83
 msgid "Add New Post"
 msgstr "Добавить новую запись"
 
-#: core/Plugin.php:86
+#: core/Plugin.php:84
 msgid "Add New Post item"
 msgstr "Добавить новую запись"
 
-#: core/Plugin.php:87
+#: core/Plugin.php:85
 msgid "Edit Post Item"
 msgstr "Редактировать запись"
 
-#: core/Plugin.php:88
+#: core/Plugin.php:86
 msgid "New Post Item"
 msgstr "Новая запись"
 
-#: core/Plugin.php:89
+#: core/Plugin.php:87
 msgid "View Post Item"
 msgstr "Просмотреть запись"
 
-#: core/Plugin.php:90
+#: core/Plugin.php:88
 msgid "Search Post"
 msgstr "Найти запись"
 
-#: core/Plugin.php:91
+#: core/Plugin.php:89
 msgid "Nothing found Services"
 msgstr "Не найдено ни одной услуги"
 
-#: core/Plugin.php:92
+#: core/Plugin.php:90
 msgid "Nothing found Services in Trash"
 msgstr "Не найдено ни одной услуги в корзине"
 
-#: core/Plugin.php:111 core/Plugin.php:121
+#: core/Plugin.php:109 core/Plugin.php:119 core/Plugin.php:148
 msgid "Products"
 msgstr "Продукция"
 
-#: core/Plugin.php:112
+#: core/Plugin.php:110
 msgid "Product"
 msgstr "Товар"
 
-#: core/Plugin.php:113
+#: core/Plugin.php:111
 msgid "Add New Product"
 msgstr "Добавить новый товар"
 
-#: core/Plugin.php:114
+#: core/Plugin.php:112
 msgid "Add New Product item"
 msgstr "Добавить новый товар"
 
-#: core/Plugin.php:115
+#: core/Plugin.php:113
 msgid "Edit Product Item"
 msgstr "Редактировать товар"
 
-#: core/Plugin.php:116
+#: core/Plugin.php:114
 msgid "New Product Item"
 msgstr "Новый товар"
 
-#: core/Plugin.php:117
+#: core/Plugin.php:115
 msgid "View Product Item"
 msgstr "Посмотреть товар"
 
-#: core/Plugin.php:118
+#: core/Plugin.php:116
 msgid "Search Product"
 msgstr "Найти товар"
 
-#: core/Plugin.php:119
+#: core/Plugin.php:117
 msgid "Nothing found Products"
 msgstr "Не найдено ни одного товара"
 
-#: core/Plugin.php:120
+#: core/Plugin.php:118
 msgid "Nothing found Products in Trash"
 msgstr "Не найдено ни одного товара в корзине"
 
-#: core/Plugin.php:146
+#: core/Plugin.php:144
 msgid "Site Options"
 msgstr "Опции сайта"
 
 #: core/Plugin.php:150
+msgid "Header background image"
+msgstr "Фоновое изображение для заголовка"
+
+#: core/Plugin.php:154
 msgid "Metrics / Advertising"
 msgstr "Метрика / Реклама"
 
-#: core/Plugin.php:152
+#: core/Plugin.php:156
 msgid "Metric's Code in head-tag"
 msgstr "Metric’s Code in head-tag"
 
-#: core/Plugin.php:156
+#: core/Plugin.php:160
 msgid "Body before Content"
 msgstr "Body before Content"
 
-#: core/Plugin.php:160
+#: core/Plugin.php:164
 msgid "Analytic's Code (like Google Analytics, etc.)"
 msgstr "Analytic’s Code (like Google Analytics, etc.)"
 
-#: core/Plugin.php:168
+#: core/Plugin.php:172
 msgid "Product attributes"
 msgstr "Атрибуты товара"
 
-#: core/Plugin.php:173 core/Plugin.php:186
+#: core/Plugin.php:177 core/Plugin.php:190 core/Plugin.php:286
 msgid "List"
 msgstr "Список"
 
-#: core/Plugin.php:175
+#: core/Plugin.php:179
 msgid "Item"
 msgstr "Элемент"
 
-#: core/Plugin.php:188
+#: core/Plugin.php:192 core/Plugin.php:288
 msgid "Thumbnail"
 msgstr "Изображение"
 
-#: core/Plugin.php:189 core/Plugin.php:230 core/Plugin.php:251
+#: core/Plugin.php:193 core/Plugin.php:234 core/Plugin.php:257
+#: core/Plugin.php:284 core/Plugin.php:289
 msgid "Title"
 msgstr "Заголовок"
 
-#: core/Plugin.php:190
+#: core/Plugin.php:194
 msgid "More Link"
 msgstr "Ссылка подробнее"
 
-#: core/Plugin.php:191 core/Plugin.php:231
+#: core/Plugin.php:195 core/Plugin.php:235 core/Plugin.php:290
 msgid "Content"
 msgstr "Контент"
 
-#: core/Plugin.php:216
+#: core/Plugin.php:220
 msgid "More"
 msgstr "Подробнее"
 
-#: core/Plugin.php:252
+#: core/Plugin.php:258
 msgid "Images"
 msgstr "Изображения"
 
-#: core/Plugin.php:342
+#: core/Plugin.php:285
+msgid "Background"
+msgstr "Фон"
+
+#: core/Plugin.php:390
 msgid "Product slider"
 msgstr ""

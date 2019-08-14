@@ -236,6 +236,9 @@
         min-height: 2.6em; } }
   .footer-menu li {
     margin-bottom: 1em; }
+    .footer-menu li.current-menu-item > a {
+      font-weight: 500;
+      color: #0372d9; }
   .footer-menu a {
     color: inherit; }
   .footer-callback {

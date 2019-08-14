@@ -8,8 +8,8 @@ function pic_setup() {
 	load_theme_textdomain( 'pic', get_template_directory() . '/languages' );
 
 	register_nav_menus( array(
-		'main_menu'			=> __( 'Header Menu', 'pic' ),
-		'sub_menu'			=> __( 'Footer Main Menu', 'pic' ),
+		'main_menu' => __( 'Header Menu', 'pic' ),
+		'sub_menu'  => __( 'Footer Main Menu', 'pic' ),
 	) );
 
 	/**

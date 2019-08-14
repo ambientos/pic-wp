@@ -82,6 +82,11 @@
 
 		li {
 			margin-bottom: 1em;
+
+			&.current-menu-item > a {
+				font-weight: $font-weight-medium;
+				color: $link-hover-color;
+			}
 		}
 
 		a {
