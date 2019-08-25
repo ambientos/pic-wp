@@ -16,11 +16,18 @@
 						<div class="col-md-6 d-flex flex-column align-self-center">
 							<div class="product-list-item-content">
 								<h3 class="product-list-item-title"><?php the_title(); ?></h3>
-								<ul class="product-list-item-chars list-unstyled">
-									<li>Масса: 2,8 кг</li>
-									<li>Марка сплава: Ак7ч</li>
-								</ul>
-								<div class="product-list-item-more"><a class="btn btn-primary btn-more" href="/"><?php _e( 'Get Order', 'pic' ); ?></a></div>
+								<?php
+
+								$attrs = carbon_get_the_post_meta( 'pa-l' );
+
+								if ( ! empty( $attrs ) ) : ?>
+									<ul class="product-list-item-chars list-unstyled">
+										<?php foreach ($attrs as $attr) : ?>
+											<li><?php echo esc_html( $attr['pa-l-i'] ); ?></li>
+										<?php endforeach; ?>
+									</ul>
+								<?php endif; ?>
+								<div class="product-list-item-more"><span class="btn btn-primary btn-more" data-fancybox data-src="#order-product" data-title="<?php echo esc_attr( get_the_title() ); ?>"><?php _e( 'Get Order', 'pic' ); ?></a></div>
 							</div>
 						</div>
 					</div>

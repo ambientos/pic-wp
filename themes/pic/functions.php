@@ -97,8 +97,8 @@ function pic_register_sidebars(){
 			'name'          => __( 'Footer Menu List', 'pic' ),
 			'id'            => 'footer-menu-list',
 			'description'   => '',
-			'before_widget' => '',
-			'after_widget'  => '',
+			'before_widget' => '<div class="col-md-3">',
+			'after_widget'  => '</div>',
 			'before_title'  => '',
 			'after_title'   => '',
 		)

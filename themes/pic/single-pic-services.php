@@ -18,7 +18,7 @@
 					<div class="teaser-num"><?php printf( '%02d', $post->menu_order ); ?></div>
 					<h3 class="teaser-title"><?php the_title(); ?></h3>
 					<?php echo wpautop( carbon_get_the_post_meta( 's-c' ) ); ?>
-					<p><span class="btn btn-primary btn-more" data-fancybox data-src="#order"><?php _e( 'Get Order', 'pic' ); ?></span></p>
+					<p><span class="btn btn-primary btn-more" data-fancybox data-src="#order-service"><?php _e( 'Get Order', 'pic' ); ?></span></p>
 				</div>
 			</div>
 		</div>

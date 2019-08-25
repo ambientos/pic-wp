@@ -57,4 +57,18 @@
 		e.preventDefault()
 		$.fancybox.close()
 	})
+
+
+	/**
+	 * Set Product Title input value by Order click
+	 */
+
+	$('[data-fancybox][data-title]').fancybox({
+		beforeLoad: function( instance, slide ) {
+			var $productTitleField = $('#order-product').find('[name="product-name"]'),
+				productTitle = slide.opts.$orig.data('title')
+
+			$productTitleField.val( productTitle )
+		}
+	})
 })(jQuery)

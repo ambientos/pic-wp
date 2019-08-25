@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pic Theme 1.0\n"
-"POT-Creation-Date: 2019-08-25 17:10+0500\n"
-"PO-Revision-Date: 2019-08-25 17:10+0500\n"
+"POT-Creation-Date: 2019-08-25 18:51+0300\n"
+"PO-Revision-Date: 2019-08-25 18:52+0300\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-pic-product.php:23 single-pic-services.php:21
+#: archive-pic-product.php:30 single-pic-services.php:21
 msgid "Get Order"
 msgstr "Заказать"
 
@@ -32,7 +32,7 @@ msgstr "Найти:"
 msgid "Site search"
 msgstr "Поиск по сайту"
 
-#: footer.php:116
+#: footer.php:58
 msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
@@ -46,7 +46,7 @@ msgstr "Footer Main Menu"
 
 #: functions.php:13
 msgid "Services Menu"
-msgstr ""
+msgstr "Меню услуг"
 
 #: functions.php:73
 msgid "After Content"
@@ -102,4 +102,4 @@ msgstr "Обратный звонок"
 
 #: single-pic-services.php:3
 msgid "Services"
-msgstr ""
+msgstr "Услуги"

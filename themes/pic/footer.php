@@ -46,67 +46,9 @@
 				<div class="footer-contact-item _mark-blue"><?php echo esc_html( get_option('pic_addr') ); ?></div>
 			</div>
 			<nav class="footer-nav-container row">
-				<div class="col-md-3">
-					<div class="footer-menu-title">Инжиниринг изделий</div>
-					<ul class="footer-nav-menu footer-menu list-unstyled">
-						<li><a href="/">Создание чертежей и 3D-моделей</a></li>
-						<li><a href="/">Разработка литейных технологий</a></li>
-						<li><a href="/">Подбор необходимого оборудования и технологической оснастки</a></li>
-						<li><a href="/">Обследование производства и выработка рекомендаций по его модернизации</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-menu-title">Изготовление литейной оснастки</div>
-					<ul class="footer-nav-menu footer-menu list-unstyled">
-						<li><a href="/">Проектирование литейной технологии</a></li>
-						<li><a href="/">Проектирование оснастки</a></li>
-						<li><a href="/">Процесс изготовлени</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-menu-title">Проектирование и производство композитных изделий</div>
-					<ul class="footer-nav-menu footer-menu list-unstyled">
-						<li><a href="/">Услуга 1</a></li>
-						<li><a href="/">Услуга 2</a></li>
-						<li><a href="/">Услуга 3</a></li>
-						<li><a href="/">Услуга 4</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-menu-title">Лабораторные исследования</div>
-					<ul class="footer-nav-menu footer-menu list-unstyled">
-						<li><a href="/">Лаборатория макро- и микроисследований</a></li>
-						<li><a href="/">Лаборатория оптического контроля</a></li>
-						<li><a href="/">Лаборатория прочностных испытаний</a></li>
-						<li><a href="/">Лаборатория неразрушающего контроля</a></li>
-						<li><a href="/">Лаборатория по определению твердости</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-menu-title">Изготовление отливок</div>
-					<ul class="footer-nav-menu footer-menu list-unstyled">
-						<li><a href="/">Литье в песчаные формы (холодно-твердеющие смеси)</a></li>
-						<li><a href="/">Литье по выплавляемым моделям (точное литье)</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-menu-title">Механическая обработка</div>
-					<ul class="footer-nav-menu footer-menu list-unstyled">
-						<li><a href="/">Услуга 1</a></li>
-						<li><a href="/">Услуга 2</a></li>
-						<li><a href="/">Услуга 3</a></li>
-						<li><a href="/">Услуга 4</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-menu-title">Дополнительные услуги</div>
-					<ul class="footer-nav-menu footer-menu list-unstyled">
-						<li><a href="/">Термообработка</a></li>
-						<li><a href="/">Дробеметная очистка</a></li>
-						<li><a href="/">Гидропескоструйная очистка</a></li>
-						<li><a href="/">Аргонодуговая сварка</a></li>
-					</ul>
-				</div>
+				<?php if ( is_active_sidebar( 'footer-menu-list' ) ) : ?>
+					<?php dynamic_sidebar( 'footer-menu-list' ); ?>
+				<?php endif; ?>
 			</nav>
 		</div>
 		<div class="footer-sub">

@@ -1700,6 +1700,7 @@ textarea.form-control {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
+  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
