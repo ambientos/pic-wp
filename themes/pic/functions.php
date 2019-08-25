@@ -8,8 +8,9 @@ function pic_setup() {
 	load_theme_textdomain( 'pic', get_template_directory() . '/languages' );
 
 	register_nav_menus( array(
-		'main_menu' => __( 'Header Menu', 'pic' ),
-		'sub_menu'  => __( 'Footer Main Menu', 'pic' ),
+		'main_menu'     => __( 'Header Menu', 'pic' ),
+		'sub_menu'      => __( 'Footer Main Menu', 'pic' ),
+		'services_menu' => __( 'Services Menu', 'pic' ),
 	) );
 
 	/**
@@ -23,7 +24,7 @@ function pic_setup() {
 	/**
 	 * Theme image sizes
 	 */
-	//add_image_size( 'home-news-featured', 384, 256, false );
+	add_image_size( 'service-thumb', 445, 345, false );
 
 	/**
 	 * Theme filters
@@ -245,3 +246,4 @@ function pic_get_phone_raw( $phone = false ){
  */
 
 require 'functions/is_show_ad.php';
+require 'functions/title_header.php';

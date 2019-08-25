@@ -434,12 +434,12 @@
   .nav-sub li {
     font-size: .75rem;
     text-transform: uppercase; }
-    .nav-sub li.active {
+    .nav-sub li.current-menu-item {
       font-size: .875rem;
       font-weight: 700; }
-      .nav-sub li.active a:hover {
+      .nav-sub li.current-menu-item a:hover {
         text-decoration: none; }
-    .nav-sub li:not(.active) > a {
+    .nav-sub li:not(.current-menu-item) > a {
       color: inherit; }
   .nav-sub a {
     display: block;

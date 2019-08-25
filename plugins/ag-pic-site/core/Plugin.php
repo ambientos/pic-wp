@@ -8,6 +8,12 @@ use Carbon_Fields\Block;
 
 class Plugin {
 	/**
+	 * Post Types
+	 */
+	const PRODUCT_POST_TYPE = 'pic-product';
+	const SERVICE_POST_TYPE = 'pic-services';
+
+	/**
 	 * Init
 	 *
 	 * @return
@@ -18,9 +24,26 @@ class Plugin {
 		 * Actions
 		 */
 		add_action( 'plugins_loaded', array( __CLASS__, 'plugins_loaded' ) );
+
+		/**
+		 * Register CPT and CT
+		 */
 		add_action( 'init', array( __CLASS__, 'register_cpt_ct' ) );
+
+		/**
+		 * Carbon Fields
+		 */
 		add_action( 'carbon_fields_register_fields', array( __CLASS__, 'carbon_fields_register_fields' ) );
+
+		/**
+		 * Login customize
+		 */
 		add_action('login_head', array( __CLASS__, 'login_head' ) );
+
+		/**
+		 * Redirect Product posts to their Archive page
+		 */
+		add_filter( 'pre_get_posts', array( __CLASS__, 'redirect_post_product_to_archive_page' ) );
 
 		/**
 		 * Shortcodes
@@ -50,33 +73,7 @@ class Plugin {
 	 * Registering Custom Post Types and Custom Taxonomies
 	 */
 	public static function register_cpt_ct() {
-		register_taxonomy( 'pic-service-category', array(), array(
-			'labels'                => array(
-				'name'              => __( 'Service Categories', TEXT_DOMAIN ),
-				'singular_name'     => __( 'Service Category', TEXT_DOMAIN ),
-				'search_items'      => __( 'Search Category', TEXT_DOMAIN ),
-				'all_items'         => __( 'All Categories', TEXT_DOMAIN ),
-				'view_item '        => __( 'View Category', TEXT_DOMAIN ),
-				'parent_item'       => __( 'Parent Category', TEXT_DOMAIN ),
-				'parent_item_colon' => __( 'Parent Category:', TEXT_DOMAIN ),
-				'edit_item'         => __( 'Edit Category', TEXT_DOMAIN ),
-				'update_item'       => __( 'Update Category', TEXT_DOMAIN ),
-				'add_new_item'      => __( 'Add New Category', TEXT_DOMAIN ),
-				'new_item_name'     => __( 'New Category Name', TEXT_DOMAIN ),
-				'menu_name'         => __( 'Service Categories', TEXT_DOMAIN ),
-			),
-			'publicly_queryable'    => true,
-			'show_in_rest'          => true,
-			'hierarchical'          => true,
-			'rewrite'               => array(
-				'slug'              => 'service-category',
-				'with_front'        => false,
-				'hierarchical'      => true,
-			),
-			'show_admin_column'     => true,
-		) );
-
-		register_post_type( 'pic-services', array(
+		register_post_type( Plugin::SERVICE_POST_TYPE, array(
 			'labels' => array(
 				'name'               => __( 'Services', TEXT_DOMAIN ),
 				'singular_name'      => __( 'Service', TEXT_DOMAIN ),
@@ -94,17 +91,16 @@ class Plugin {
 			'show_in_rest'        => true,
 			'menu_position'       => 5,
 			'menu_icon'           => 'dashicons-portfolio',
-			'supports'            => array( 'title', 'editor', 'revisions' ),
-			'has_archive'         => 'services',
-			'taxonomies'          => array( 'pic-service-category' ),
+			'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes', ),
+			'has_archive'         => false,
 			'rewrite'             => array(
-				'slug'            => 'services',
+				'slug'            => 'service',
 				'with_front'      => false,
 				'feeds'           => false,
 			),
 		) );
 
-		register_post_type( 'pic-product', array(
+		register_post_type( Plugin::PRODUCT_POST_TYPE, array(
 			'labels' => array(
 				'name'               => __( 'Products', TEXT_DOMAIN ),
 				'singular_name'      => __( 'Product', TEXT_DOMAIN ),
@@ -118,14 +114,18 @@ class Plugin {
 				'not_found_in_trash' => __( 'Nothing found Products in Trash', TEXT_DOMAIN ),
 				'menu_name'          => __( 'Products', TEXT_DOMAIN ),
 			),
-			'public'              => true,
+			'public'              => false,
+			'show_ui'             => true,
+			'publicly_queryable'  => true,
+			'exclude_from_search' => true,
+			'show_in_nav_menus'   => true,
 			'show_in_rest'        => false,
 			'menu_position'       => 5,
 			'menu_icon'           => 'dashicons-cart',
-			'supports'            => array( 'title', 'editor', 'revisions', 'thumbnail' ),
-			'has_archive'         => 'product',
+			'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', ),
+			'has_archive'         => 'products',
 			'rewrite'             => array(
-				'slug'            => 'product',
+				'slug'            => 'services',
 				'with_front'      => false,
 				'feeds'           => false,
 			),
@@ -143,6 +143,12 @@ class Plugin {
 
 		Container::make( 'theme_options', __( 'Site Options', TEXT_DOMAIN ) )
 			->set_icon('dashicons-hammer')
+
+			// Services
+			->add_tab( __( 'Services', TEXT_DOMAIN ), array(
+				// Header background image
+				Field::make( 'image', 'services-h-i', __( 'Header background image', TEXT_DOMAIN ) ),
+			) )
 
 			// Products
 			->add_tab( __( 'Products', TEXT_DOMAIN ), array(
@@ -180,6 +186,23 @@ class Plugin {
 						) ),
 				)
 			);
+
+		/**
+		 * Service
+		 */
+
+		Container::make( 'post_meta', __( 'Services', TEXT_DOMAIN ) )
+			->where( 'post_type', '=', 'pic-services' )
+			->add_fields( array(
+				// Thumbnail video
+				Field::make( 'file', 's-i', __( 'Main Video', TEXT_DOMAIN ) ),
+
+				// Short Description
+				Field::make( 'textarea', 's-d', __( 'Short Description', TEXT_DOMAIN ) ),
+
+				// Full Description
+				Field::make( 'textarea', 's-c', __( 'Full Description', TEXT_DOMAIN ) ),
+			) );
 
 		/**
 		 * Gutenberg Blocks
@@ -266,9 +289,9 @@ class Plugin {
 					<h2 class="widget-title"><?php echo esc_html( $block['gt-t'] ); ?></h2>
 					<div class="row">
 						<?php foreach ( $block['gt-l'] as $thumb_id ) : ?>
-							<?php $thumb_full_arr = wp_get_attachment_image_src( $thumb_id, 'full' ); ?>
+							<?php $thumb_full_src = wp_get_attachment_url( $thumb_id ); ?>
 							<figure class="box-item col-xl-3 col-lg-4 col-md-6 d-sm-flex">
-								<a href="<?php echo esc_url( $thumb_full_arr[0] ); ?>" data-fancybox="thumbnails"><?php echo wp_get_attachment_image( $thumb_id, 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?></a>
+								<a href="<?php echo esc_url( $thumb_full_src ); ?>" data-fancybox="thumbnails"><?php echo wp_get_attachment_image( $thumb_id, 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?></a>
 							</figure>
 						<?php endforeach; ?>
 					</div>
@@ -338,6 +361,24 @@ class Plugin {
 		</style>
 
 		<?php
+	}
+
+	/**
+	 * Redirect Product post to their Archive page
+	 */
+
+	public static function redirect_post_product_to_archive_page( $query ) {
+		if (
+			! is_admin() &&
+			$query->is_main_query() &&
+			isset( $query->query_vars[ Plugin::PRODUCT_POST_TYPE ] )
+		) {
+			wp_redirect( site_url( '/products/' ), 301 );
+
+			exit;
+		}
+
+		return $query;
 	}
 
 	/**

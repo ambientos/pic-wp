@@ -8,7 +8,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 	<header class="header">
 		<div class="d-flex flex-wrap flex-md-nowrap">
 			<div class="header-logo d-flex align-items-center justify-content-center">

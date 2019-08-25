@@ -11,7 +11,7 @@
 			font-size: .75rem;
 			text-transform: uppercase;
 
-			&.active {
+			&.current-menu-item {
 				font: {
 					size: .875rem;
 					weight: $font-weight-bold;
@@ -22,7 +22,7 @@
 				}
 			}
 
-			&:not(.active) > a {
+			&:not(.current-menu-item) > a {
 				color: inherit;
 			}
 		}
