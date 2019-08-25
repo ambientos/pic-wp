@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: AG Pic Site Plugin 1.0\n"
-"POT-Creation-Date: 2019-08-25 18:52+0300\n"
-"PO-Revision-Date: 2019-08-25 18:52+0300\n"
+"POT-Creation-Date: 2019-08-25 20:45+0300\n"
+"PO-Revision-Date: 2019-08-25 20:45+0300\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: core/Plugin.php:72 core/Plugin.php:82 core/Plugin.php:142
-#: core/Plugin.php:188 core/Plugin.php:351 core/Plugin.php:365
+#: core/Plugin.php:188 core/Plugin.php:382 core/Plugin.php:396
 msgid "Services"
 msgstr "Услуги"
 
@@ -129,7 +129,8 @@ msgstr "Analytic’s Code (like Google Analytics, etc.)"
 msgid "Product attributes"
 msgstr "Атрибуты товара"
 
-#: core/Plugin.php:177 core/Plugin.php:207 core/Plugin.php:310
+#: core/Plugin.php:177 core/Plugin.php:207 core/Plugin.php:290
+#: core/Plugin.php:337
 msgid "List"
 msgstr "Список"
 
@@ -149,11 +150,11 @@ msgstr "Короткое описание"
 msgid "Full Description"
 msgstr "Полное описание"
 
-#: core/Plugin.php:209 core/Plugin.php:312
+#: core/Plugin.php:209 core/Plugin.php:292 core/Plugin.php:339
 msgid "Thumbnail"
 msgstr "Изображение"
 
-#: core/Plugin.php:218
+#: core/Plugin.php:218 core/Plugin.php:294
 msgid "Description"
 msgstr "Описание"
 
@@ -161,55 +162,19 @@ msgstr "Описание"
 msgid "More"
 msgstr "Подробнее"
 
-#: core/Plugin.php:258 core/Plugin.php:281 core/Plugin.php:308
-#: core/Plugin.php:313
+#: core/Plugin.php:262 core/Plugin.php:289 core/Plugin.php:335
+#: core/Plugin.php:340
 msgid "Title"
 msgstr "Заголовок"
 
-#: core/Plugin.php:259 core/Plugin.php:314
+#: core/Plugin.php:263 core/Plugin.php:341
 msgid "Content"
 msgstr "Контент"
 
-#: core/Plugin.php:282
-msgid "Images"
-msgstr "Изображения"
+#: core/Plugin.php:293
+msgid "Link"
+msgstr "Ссылка"
 
-#: core/Plugin.php:309
+#: core/Plugin.php:336
 msgid "Background"
 msgstr "Фон"
-
-#~ msgid "Service Categories"
-#~ msgstr "Категории услуг"
-
-#~ msgid "Service Category"
-#~ msgstr "Категория услуги"
-
-#~ msgid "Search Category"
-#~ msgstr "Найти категорию"
-
-#~ msgid "All Categories"
-#~ msgstr "Все категории"
-
-#~ msgid "View Category"
-#~ msgstr "Просмотреть категорию"
-
-#~ msgid "Parent Category"
-#~ msgstr "Родительская категория"
-
-#~ msgid "Parent Category:"
-#~ msgstr "Родительская категория:"
-
-#~ msgid "Edit Category"
-#~ msgstr "Редактировать категорию"
-
-#~ msgid "Update Category"
-#~ msgstr "Обновить категорию"
-
-#~ msgid "Add New Category"
-#~ msgstr "Добавить новую категорию"
-
-#~ msgid "New Category Name"
-#~ msgstr "Новое имя категории"
-
-#~ msgid "More Link"
-#~ msgstr "Ссылка подробнее"

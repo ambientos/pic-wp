@@ -199,7 +199,7 @@ class Plugin {
 			) );
 
 		/**
-		 * Gutenberg Blocks
+		 * Promo Carousel Block
 		 */
 
 		Block::make( 'Promo Carousel' )
@@ -253,6 +253,10 @@ class Plugin {
 		} );
 
 
+		/**
+		 * Content Widget Block
+		 */
+
 		Block::make( 'Content Widget' )
 			->add_fields( array(
 				Field::make( 'text', 'cw-t', __( 'Title', TEXT_DOMAIN ) ),
@@ -276,10 +280,20 @@ class Plugin {
 		} );
 
 
+		/**
+		 * Grid Thumbnails with desctiption Block
+		 */
+
 		Block::make( 'Grid Thumbnails' )
 			->add_fields( array(
 				Field::make( 'text', 'gt-t', __( 'Title', TEXT_DOMAIN ) ),
-				Field::make( 'media_gallery', 'gt-l', __( 'Images', TEXT_DOMAIN ) ),
+				Field::make( 'complex', 'gt-l', __( 'List', TEXT_DOMAIN ) )
+					->add_fields( array(
+						Field::make( 'image', 'gt-l-i', __( 'Thumbnail', TEXT_DOMAIN ) ),
+						Field::make( 'text', 'gt-l-l', __( 'Link', TEXT_DOMAIN ) ),
+						Field::make( 'text', 'gt-l-d', __( 'Description', TEXT_DOMAIN ) ),
+					) )
+					->set_layout( 'tabbed-horizontal' ),
 			) )
 			->set_icon( 'images-alt2' )
 			->set_category( 'cb-blocks', 'Carbon Blocks' )
@@ -289,11 +303,20 @@ class Plugin {
 				<div class="container">
 					<h2 class="widget-title"><?php echo esc_html( $block['gt-t'] ); ?></h2>
 					<div class="row">
-						<?php foreach ( $block['gt-l'] as $thumb_id ) : ?>
-							<?php $thumb_full_src = wp_get_attachment_url( $thumb_id ); ?>
-							<figure class="box-item col-xl-3 col-lg-4 col-md-6 d-sm-flex">
-								<a href="<?php echo esc_url( $thumb_full_src ); ?>" data-fancybox="thumbnails"><?php echo wp_get_attachment_image( $thumb_id, 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?></a>
-							</figure>
+						<?php foreach ( $block['gt-l'] as $thumb_item ) : ?>
+							<?php
+
+							$thumb_full = ! empty( $thumb_item['gt-l-l'] ) ? esc_attr( $thumb_item['gt-l-l'] ) : wp_get_attachment_url( $thumb_item['gt-l-i'] );
+
+							?>
+							<a href="<?php echo esc_url( $thumb_full ); ?>" data-fancybox="thumbnails" class="box-item col-xl-3 col-lg-4 col-md-6 d-sm-flex">
+								<figure>
+									<?php echo wp_get_attachment_image( $thumb_item['gt-l-i'], 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?>
+									<?php if ( ! empty( $thumb_item['gt-l-d'] ) ) : ?>
+										<figcaption><?php echo esc_html( $thumb_item['gt-l-d'] ); ?></figcaption>
+									<?php endif; ?>
+								</figure>
+							</a>
 						<?php endforeach; ?>
 					</div>
 				</div>
@@ -302,6 +325,10 @@ class Plugin {
 			<?php
 		} );
 
+
+		/**
+		 * Clients Block
+		 */
 
 		Block::make( 'Clients' )
 			->add_fields( array(
@@ -345,6 +372,10 @@ class Plugin {
 			<?php
 		} );
 
+
+		/**
+		 * Services Block
+		 */
 
 		Block::make( 'Services' )
 			->add_fields( array(

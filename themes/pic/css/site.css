@@ -297,6 +297,10 @@
 
 .box-item {
   margin-top: 30px; }
+  .box-item figcaption {
+    margin-top: 1em;
+    font-size: 1rem;
+    font-weight: 500; }
 
 .box-info {
   counter-reset: box-list; }
