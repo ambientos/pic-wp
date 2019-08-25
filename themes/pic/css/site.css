@@ -674,17 +674,12 @@
       .clients-list-item {
         padding: 6em 2em 2em; } }
     .clients-list-item-thumb {
-      margin-bottom: 1em; }
-      @media (min-width: 992px) {
-        .clients-list-item-thumb {
-          margin-bottom: 3em; } }
+      min-height: 120px;
+      margin-bottom: 1.5em; }
     .clients-list-item-name {
       margin: 2em 0;
       font-weight: 700;
       text-transform: uppercase; }
-      @media (min-width: 992px) {
-        .clients-list-item-name {
-          margin-top: 4em; } }
 
 .product-list {
   margin-top: 3em; }

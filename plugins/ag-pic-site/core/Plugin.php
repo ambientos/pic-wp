@@ -44,12 +44,6 @@ class Plugin {
 		 * Redirect Product posts to their Archive page
 		 */
 		add_filter( 'pre_get_posts', array( __CLASS__, 'redirect_post_product_to_archive_page' ) );
-
-		/**
-		 * Shortcodes
-		 */
-		//add_shortcode( 'home-slider', array( $this, 'home_slider_shortcode' ) );
-		//add_shortcode( 'product-slider', array( $this, 'product_slider_shortcode' ) );
 	}
 
 	/**
@@ -213,9 +207,15 @@ class Plugin {
 				Field::make( 'complex', 'pc-l', __( 'List', TEXT_DOMAIN ) )
 					->add_fields( array(
 						Field::make( 'image', 'pc-l-i', __( 'Thumbnail', TEXT_DOMAIN ) ),
-						Field::make( 'text', 'pc-l-t', __( 'Title', TEXT_DOMAIN ) ),
-						Field::make( 'text', 'pc-l-l', __( 'More Link', TEXT_DOMAIN ) ),
-						Field::make( 'rich_text', 'pc-l-c', __( 'Content', TEXT_DOMAIN ) )
+						Field::make( 'association', 'pc-l-l', __( 'Service', TEXT_DOMAIN ) )
+							->set_types( array(
+								array(
+									'type'      => 'post',
+									'post_type' => 'pic-services',
+								)
+							) )
+							->set_max( 1 ),
+						Field::make( 'rich_text', 'pc-l-c', __( 'Description', TEXT_DOMAIN ) )
 							->set_rows(20),
 					) )
 					->set_layout( 'tabbed-horizontal' ),
@@ -232,16 +232,17 @@ class Plugin {
 				</div>
 				<div class="carousel owl-carousel">
 					<?php foreach ( $block['pc-l'] as $carousel_item ) : ?>
-						<?php $thumb_full_arr = wp_get_attachment_image_src( $carousel_item['pc-l-i'], 'full' ); ?>
-						<div class="promo-item" style="background-image:url(<?php echo esc_url( $thumb_full_arr[0] ); ?>)">
+						<?php
+							$thumb_full = wp_get_attachment_url( $carousel_item['pc-l-i'] );
+							$service_post = get_post( $carousel_item['pc-l-l'][0]['id'] );
+						?>
+						<div class="promo-item" style="background-image:url(<?php echo esc_url( $thumb_full ); ?>)">
 							<div class="container">
-								<div class="promo-item-title"><?php echo esc_html( $carousel_item['pc-l-t'] ); ?></div>
+								<div class="promo-item-title"><?php echo esc_html( $service_post->post_title ); ?></div>
 								<div class="promo-item-info">
 									<?php echo $carousel_item['pc-l-c']; ?>
 								</div>
-								<?php if ( ! empty($carousel_item['pc-l-l']) ) : ?>
-									<div class="promo-item-more"><a class="btn btn-more" href="<?php echo esc_url( $carousel_item['pc-l-l'] ); ?>"><?php _e( 'More', TEXT_DOMAIN ) ?></a></div>
-								<?php endif; ?>
+								<div class="promo-item-more"><a class="btn btn-more" href="<?php the_permalink( $service_post ); ?>"><?php _e( 'More', TEXT_DOMAIN ) ?></a></div>
 							</div>
 						</div>
 					<?php endforeach; ?>
@@ -323,13 +324,13 @@ class Plugin {
 				<div class="container">
 					<h2 class="widget-title"><?php echo esc_html( $block['cl-t'] ); ?></h2>
 				</div>
-				<?php $bg_full_arr = wp_get_attachment_image_src( $block['cl-i'], 'full' ); ?>
-				<div class="clients" style="background-image:url(<?php echo esc_url( $bg_full_arr[0] ); ?>)">
+				<?php $bg_full = wp_get_attachment_url( $block['cl-i'] ); ?>
+				<div class="clients" style="background-image:url(<?php echo esc_url( $bg_full ); ?>)">
 					<div class="container">
 						<div class="clients-list row">
 							<?php foreach ( $block['cl-l'] as $client_item ) : ?>
 								<div class="clients-list-item col-md-3">
-									<figure class="clients-list-item-thumb"><?php echo wp_get_attachment_image( $client_item['cl-l-i'], 'client-thumb' ); ?></figure>
+									<figure class="clients-list-item-thumb d-flex justify-content-center align-items-center"><?php echo wp_get_attachment_image( $client_item['cl-l-i'], 'client-thumb' ); ?></figure>
 									<div class="clients-list-item-name"><?php echo esc_html( $client_item['cl-l-t'] ); ?></div>
 									<div class="clients-list-item-info">
 										<?php echo $client_item['cl-l-c']; ?>
@@ -337,6 +338,45 @@ class Plugin {
 								</div>
 							<?php endforeach; ?>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<?php
+		} );
+
+
+		Block::make( 'Services' )
+			->add_fields( array(
+				Field::make( 'association', 'sv-l', __( 'Services', TEXT_DOMAIN ) )
+					->set_types( array(
+						array(
+							'type'      => 'post',
+							'post_type' => 'pic-services',
+						)
+					) ),
+			) )
+			->set_icon( 'portfolio' )
+			->set_category( 'cb-blocks', 'Carbon Blocks' )
+			->set_render_callback( function ( $block ) { ?>
+
+			<section class="widget">
+				<div class="container">
+					<h2 class="widget-title"><?php _e( 'Services', TEXT_DOMAIN ); ?></h2>
+					<div class="service-list row">
+						<?php foreach ( $block['sv-l'] as $service_assoc ) : ?>
+							<?php
+								$service_post = get_post( $service_assoc['id'] );
+								$thumb_full = get_the_post_thumbnail_url( $service_post, 'full' );;
+							?>
+							<div class="col-xl-3 col-lg-4 col-md-6 d-sm-flex">
+								<a class="service-list-item box-item" href="<?php the_permalink( $service_post ); ?>">
+									<div class="service-list-item-thumb" style="background-image:url(<?php echo esc_url( $thumb_full ); ?>)"></div>
+									<h3 class="service-list-item-title"><?php echo esc_html( $service_post->post_title ); ?></h3>
+									<div class="service-list-item-text"><?php echo wpautop( carbon_get_post_meta( $service_assoc['id'], 's-d' ) ); ?></div>
+								</a>
+							</div>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			</section>
@@ -379,97 +419,5 @@ class Plugin {
 		}
 
 		return $query;
-	}
-
-	/**
-	 * Home slider shortcode
-	 */
-	public function home_slider_shortcode( $atts = false ) {
-		extract( shortcode_atts( array(
-		), $atts ) );
-
-		ob_start();
-
-		self::home_slider();
-
-		return ob_get_clean();
-	}
-
-	/**
-	 * Home slider static function
-	 */
-	public static function home_slider() {
-		$slider_items = carbon_get_theme_option('home-slider');
-
-		if ( ! empty($slider_items) ) :
-			?>
-
-			<div class="slider owl-carousel">
-				<?php foreach ($slider_items as $slider_item) : ?>
-					<?php
-						$slider_item_image_src = wp_get_attachment_image_src( $slider_item['site-home-banner-thumb'], 'home-slider' );
-					?>
-					<div class="slider__item">
-						<a href="<?php echo esc_url( $slider_item['site-home-banner-link'] ); ?>" style="background-image:url(<?php echo $slider_item_image_src[0]; ?>)">
-						</a>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-			<?php
-
-		endif;
-	}
-
-	/**
-	 * Product slider shortcode
-	 */
-	public function product_slider_shortcode( $atts = false ) {
-		$limit_init = 8;
-
-		extract( shortcode_atts( array(
-			'title' => __( 'Product slider', TEXT_DOMAIN ),
-			'limit' => $limit_init,
-		), $atts ) );
-
-		$limit = intval( $limit ) ? intval( $limit ) : 8;
-
-
-		$products_args = array(
-			'post_type' => 'product',
-			'posts_per_page' => $limit,
-		);
-
-		$products_query = new \WP_Query( $products_args );
-
-
-		ob_start();
-
-		if ( $products_query->have_posts() ) :
-			?>
-
-			<div class="none-m">
-                <h4><?php echo esc_html( $title ); ?></h4>
-
-                <div class="product-carousel owl-carousel">
-					<?php
-
-					while ( $products_query->have_posts() ) :
-						$products_query->the_post();
-
-						wc_get_template_part( 'content', 'product' );
-					endwhile;
-
-					?>
-				</div>
-			</div>
-
-			<?php
-
-		endif;
-
-		wp_reset_postdata();
-
-		return ob_get_clean();
 	}
 }
