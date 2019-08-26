@@ -11,6 +11,9 @@
   overflow: hidden;
   word-wrap: normal !important; }
 
+span.wpcf7-list-item:first-child {
+  margin-left: 0; }
+
 @font-face {
   font-family: "HelveticaNeue";
   font-weight: 400;
@@ -407,6 +410,8 @@
     background-color: #fff; }
   .list-featured-title {
     margin-bottom: 1.5em; }
+  .list-featured ol {
+    padding-left: 1em; }
   .list-featured li {
     position: relative;
     margin-bottom: 1em;

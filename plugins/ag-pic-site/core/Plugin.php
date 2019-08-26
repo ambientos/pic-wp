@@ -170,7 +170,7 @@ class Plugin {
 		 */
 
 		Container::make( 'post_meta', __( 'Product attributes', TEXT_DOMAIN ) )
-			->where( 'post_type', 'IN', array( 'pic-product' ) )
+			->where( 'post_type', '=', 'pic-product' )
 			->set_context( 'carbon_fields_after_title' )
 			->add_fields(
 				array(
@@ -190,6 +190,9 @@ class Plugin {
 			->add_fields( array(
 				// Thumbnail video
 				Field::make( 'file', 's-i', __( 'Main Video', TEXT_DOMAIN ) ),
+
+				// Custom title
+				Field::make( 'text', 's-t', __( 'Title', TEXT_DOMAIN ) ),
 
 				// Short Description
 				Field::make( 'textarea', 's-d', __( 'Short Description', TEXT_DOMAIN ) ),

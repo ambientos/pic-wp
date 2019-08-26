@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: AG Pic Site Plugin 1.0\n"
-"POT-Creation-Date: 2019-08-25 20:45+0300\n"
-"PO-Revision-Date: 2019-08-25 20:45+0300\n"
+"POT-Creation-Date: 2019-08-26 14:14+0300\n"
+"PO-Revision-Date: 2019-08-26 14:14+0300\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -21,11 +21,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: core/Plugin.php:72 core/Plugin.php:82 core/Plugin.php:142
-#: core/Plugin.php:188 core/Plugin.php:382 core/Plugin.php:396
+#: core/Plugin.php:188 core/Plugin.php:385 core/Plugin.php:399
 msgid "Services"
 msgstr "Услуги"
 
-#: core/Plugin.php:73 core/Plugin.php:210
+#: core/Plugin.php:73 core/Plugin.php:213
 msgid "Service"
 msgstr "Услуга"
 
@@ -129,8 +129,8 @@ msgstr "Analytic’s Code (like Google Analytics, etc.)"
 msgid "Product attributes"
 msgstr "Атрибуты товара"
 
-#: core/Plugin.php:177 core/Plugin.php:207 core/Plugin.php:290
-#: core/Plugin.php:337
+#: core/Plugin.php:177 core/Plugin.php:210 core/Plugin.php:293
+#: core/Plugin.php:340
 msgid "List"
 msgstr "Список"
 
@@ -142,39 +142,39 @@ msgstr "Элемент"
 msgid "Main Video"
 msgstr "Главное видео"
 
-#: core/Plugin.php:195
-msgid "Short Description"
-msgstr "Короткое описание"
-
-#: core/Plugin.php:198
-msgid "Full Description"
-msgstr "Полное описание"
-
-#: core/Plugin.php:209 core/Plugin.php:292 core/Plugin.php:339
-msgid "Thumbnail"
-msgstr "Изображение"
-
-#: core/Plugin.php:218 core/Plugin.php:294
-msgid "Description"
-msgstr "Описание"
-
-#: core/Plugin.php:245
-msgid "More"
-msgstr "Подробнее"
-
-#: core/Plugin.php:262 core/Plugin.php:289 core/Plugin.php:335
-#: core/Plugin.php:340
+#: core/Plugin.php:195 core/Plugin.php:265 core/Plugin.php:292
+#: core/Plugin.php:338 core/Plugin.php:343
 msgid "Title"
 msgstr "Заголовок"
 
-#: core/Plugin.php:263 core/Plugin.php:341
+#: core/Plugin.php:198
+msgid "Short Description"
+msgstr "Короткое описание"
+
+#: core/Plugin.php:201
+msgid "Full Description"
+msgstr "Полное описание"
+
+#: core/Plugin.php:212 core/Plugin.php:295 core/Plugin.php:342
+msgid "Thumbnail"
+msgstr "Изображение"
+
+#: core/Plugin.php:221 core/Plugin.php:297
+msgid "Description"
+msgstr "Описание"
+
+#: core/Plugin.php:248
+msgid "More"
+msgstr "Подробнее"
+
+#: core/Plugin.php:266 core/Plugin.php:344
 msgid "Content"
 msgstr "Контент"
 
-#: core/Plugin.php:293
+#: core/Plugin.php:296
 msgid "Link"
 msgstr "Ссылка"
 
-#: core/Plugin.php:336
+#: core/Plugin.php:339
 msgid "Background"
 msgstr "Фон"
