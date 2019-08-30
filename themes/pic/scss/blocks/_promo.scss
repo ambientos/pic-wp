@@ -27,9 +27,14 @@
 		button {
 			margin: 0 $grid-gutter-width * .3;
 			padding: .14em .51em;
+			font-size: .6875rem;
 			color: $white;
 			border: 1px solid $white;
 			background: none;
+
+			@include media-breakpoint-up("md") {
+				font-size: 1rem;
+			}
 
 			&:first-child,
 			&.active:first-child {
@@ -45,7 +50,7 @@
 				}
 
 				span::before {
-					font-size: 4em;
+					font-size: 3em;
 					color: $bg-color;
 					content: counter(nav-list, decimal-leading-zero);
 					text-shadow:

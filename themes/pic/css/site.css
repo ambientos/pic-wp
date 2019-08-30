@@ -474,9 +474,13 @@ span.wpcf7-list-item:first-child {
   .promo-nav button {
     margin: 0 9px;
     padding: .14em .51em;
+    font-size: .6875rem;
     color: #fff;
     border: 1px solid #fff;
     background: none; }
+    @media (min-width: 768px) {
+      .promo-nav button {
+        font-size: 1rem; } }
     .promo-nav button:first-child, .promo-nav button.active:first-child {
       margin-left: 0; }
     .promo-nav button.active {
@@ -486,7 +490,7 @@ span.wpcf7-list-item:first-child {
         .promo-nav button.active {
           margin: 0 2em; } }
       .promo-nav button.active span::before {
-        font-size: 4em;
+        font-size: 3em;
         color: #012342;
         content: counter(nav-list, decimal-leading-zero);
         text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }

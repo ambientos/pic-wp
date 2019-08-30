@@ -271,6 +271,9 @@ progress {
   font: inherit;
   -webkit-appearance: button; }
 
+input[type="file"] {
+  max-width: 100%; }
+
 output {
   display: inline-block; }
 

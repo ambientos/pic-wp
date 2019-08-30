@@ -471,6 +471,13 @@ progress {
 }
 
 //
+// Fix overflow input file in IE
+//
+input[type="file"] {
+  max-width: 100%;
+}
+
+//
 // Correct element displays
 //
 
