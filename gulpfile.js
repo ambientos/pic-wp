@@ -1,4 +1,5 @@
 const   gulp = require('gulp'),
+        browsersync = require('browser-sync').create(),
         autoprefixer = require('gulp-autoprefixer'),
         sass = require('gulp-sass'),
         plumber = require('gulp-plumber'),
@@ -16,6 +17,16 @@ const   gulp = require('gulp'),
         }
 
 
+// BrowserSync
+function browserSync(done) {
+    browsersync.init({
+        proxy: 'pic'
+    })
+
+    done()
+}
+
+
 // CSS task
 function cssGenerate() {
     return gulp
@@ -24,6 +35,7 @@ function cssGenerate() {
         .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
         .pipe(autoprefixer('last 2 versions'))
         .pipe(gulp.dest( [path.dist, path.css].join('/') ))
+        .pipe(browsersync.stream())
 }
 
 
@@ -33,7 +45,7 @@ function watchFiles() {
 }
 
 
-const watch = gulp.parallel(watchFiles)
+const watch = gulp.parallel(watchFiles, browserSync)
 
 exports.css = cssGenerate
 exports.default = gulp.series(cssGenerate, watch)
