@@ -4,6 +4,13 @@
 		position: relative;
 	}
 
+	&-container {
+		@include media-breakpoint-down("md") {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
 	&-object {
 		min-height: 600px;
 	}
@@ -24,11 +31,18 @@
 		}
 
 		&-container {
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
+			@include media-breakpoint-down("md") {
+				order: -1;
+				background-color: $blue;
+			}
+
+			@include media-breakpoint-up("lg") {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
 		}
 
 		a {
