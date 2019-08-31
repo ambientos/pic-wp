@@ -13,8 +13,12 @@
 			color: $white;
 
 			@include media-breakpoint-down("sm") {
-				&:first-child {
-					padding-top: 2em;
+				$padding: 3em;
+
+				padding-top: $padding;
+
+				&:last-child {
+					padding-bottom: $padding;
 				}
 			}
 
@@ -27,8 +31,11 @@
 			}
 
 			&-thumb {
-				min-height: 120px;
 				margin-bottom: 1.5em;
+
+				@include media-breakpoint-up("md") {
+					min-height: 120px;
+				}
 			}
 
 			&-name {
