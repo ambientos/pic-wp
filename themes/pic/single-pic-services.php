@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php title_header( __( 'Services', 'pics' ), carbon_get_theme_option( 'services-h-i' ) ); ?>
+<?php pic_title_header( __( 'Services', 'pics' ), carbon_get_theme_option( 'services-h-i' ) ); ?>
 
 <div class="container">
 	<?php wp_nav_menu( array(

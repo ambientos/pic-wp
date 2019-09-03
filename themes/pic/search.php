@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php title_header( __( 'Search', 'pic' ) ); ?>
+<?php pic_title_header( __( 'Search', 'pic' ) ); ?>
 
 <section class="widget container">
 	<h2 class="widget-title"><?php printf( __( 'Search Results by &laquo;%s&raquo;', 'pic' ), get_search_query() ); ?></h2>

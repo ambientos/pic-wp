@@ -79,6 +79,10 @@
 		</div>
 	<?php endif; ?>
 
+	<?php if ( pic_is_show_ad() ) : ?>
+		<?php echo get_option('pic_ac'); ?>
+	<?php endif; ?>
+
 	<?php wp_footer(); ?>
 </body>
 </html>

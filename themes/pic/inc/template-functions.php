@@ -4,7 +4,7 @@
  * Show title header
  */
 
-function title_header( $title = 'Title', $attachment_id = false ){
+function pic_title_header( $title = 'Title', $attachment_id = false ){
 	global $post;
 
 	$background_url = '';
@@ -26,4 +26,25 @@ function title_header( $title = 'Title', $attachment_id = false ){
 	</div>
 
 	<?php
+}
+
+
+/**
+ * Return raw phone
+ */
+
+function pic_get_phone_raw( $phone = false ){
+	if ( $phone )
+		return str_replace('(', '', str_replace(')', '', str_replace('-', '', str_replace(' ', '', $phone) ) ) );
+}
+
+
+/**
+ * Check for show advertisement
+ */
+
+function pic_is_show_ad(){
+	$is_show_ad = get_option( 'pic_ad_show', false );
+
+	return $is_show_ad;
 }

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php title_header( post_type_archive_title( '', false ), carbon_get_theme_option( 'products-h-i' ) ); ?>
+<?php pic_title_header( post_type_archive_title( '', false ), carbon_get_theme_option( 'products-h-i' ) ); ?>
 
 <div class="container">
 	<?php if ( have_posts() ) : ?>
