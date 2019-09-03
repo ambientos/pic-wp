@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pic Theme 1.0\n"
-"POT-Creation-Date: 2019-08-25 18:51+0300\n"
-"PO-Revision-Date: 2019-08-25 18:52+0300\n"
+"POT-Creation-Date: 2019-09-03 06:49+0500\n"
+"PO-Revision-Date: 2019-09-03 06:50+0500\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -20,19 +20,11 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-pic-product.php:30 single-pic-services.php:21
+#: archive-pic-product.php:30 single-pic-services.php:31
 msgid "Get Order"
 msgstr "Заказать"
 
-#: footer.php:20
-msgid "Search:"
-msgstr "Найти:"
-
-#: footer.php:21
-msgid "Site search"
-msgstr "Поиск по сайту"
-
-#: footer.php:58
+#: footer.php:54
 msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
@@ -100,6 +92,26 @@ msgstr "Меню"
 msgid "Callback"
 msgstr "Обратный звонок"
 
+#: search.php:3
+msgid "Search"
+msgstr "Найти"
+
+#: search.php:6
+#, php-format
+msgid "Search Results by &laquo;%s&raquo;"
+msgstr "Результаты поиска по запросу &laquo;%s&raquo;"
+
+#: search.php:24
+msgid "Sorry, but nothing found. Try another search."
+msgstr "Извините, но по вашему запросу ничего не найдено."
+
+#: searchform.php:3
+msgid "Search:"
+msgstr "Найти:"
+
 #: single-pic-services.php:3
 msgid "Services"
 msgstr "Услуги"
+
+#~ msgid "Site search"
+#~ msgstr "Поиск по сайту"

@@ -15,12 +15,8 @@
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-8">
-					<div class="footer-search">
-						<form role="search" method="get" class="search-form" action="http://pic/">
-							<span class="screen-reader-text"><?php _e( 'Search:', 'pic' ) ?></span>
-							<input class="footer-search-control form-control-sm form-control" type="search" placeholder="<?php _e( 'Site search', 'pic' ); ?>" value="" name="s">
-						</form>
-					</div>
+					<?php get_search_form(); ?>
+
 					<nav>
 						<?php wp_nav_menu( array(
 							'theme_location' => 'sub_menu',
