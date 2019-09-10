@@ -5,26 +5,6 @@
  * @package weedgets
  */
 
-
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function weedgets_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function weedgets_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-
 add_action('customize_register', function($wp_customize){
 
 	/**
