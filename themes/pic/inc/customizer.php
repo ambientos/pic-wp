@@ -2,7 +2,7 @@
 /**
  * weedgets Theme Customizer
  *
- * @package weedgets
+ * @package pic
  */
 
 add_action('customize_register', function($wp_customize){
