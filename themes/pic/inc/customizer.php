@@ -55,6 +55,13 @@ add_action('customize_register', function($wp_customize){
 						'control_type' => 'text',
 					),
 
+					// Privacy Policy
+					'pic_pp' => array(
+						'label' => __( 'Privacy Policy link', 'pic' ),
+						'setting_type' => 'option',
+						'control_type' => 'text',
+					),
+
 					// Years
 					'pic_y' => array(
 						'label' => __( 'Years', 'pic' ),

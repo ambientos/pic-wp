@@ -51,7 +51,7 @@
 			<div class="container">
 				<div class="d-md-flex justify-content-md-between">
 					<div class="footer-copy"><?php echo esc_html( get_option('pic_cr') ); ?></div>
-					<div class="footer-policy"><a href="/privacy-policy"><?php _e( 'Privacy Policy', 'pic' ); ?></a></div>
+					<div class="footer-policy"><a href="<?php echo esc_url( get_option('pic_pp') ); ?>" target="_blank"><?php _e( 'Privacy Policy', 'pic' ); ?></a></div>
 					<div class="footer-d"><?php echo esc_html( str_replace( '%%year%%', date( 'Y' ), get_option('pic_y') ) ); ?></div>
 				</div>
 			</div>

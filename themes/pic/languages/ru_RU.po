@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pic Theme 1.0\n"
-"POT-Creation-Date: 2019-09-03 20:03+0500\n"
-"PO-Revision-Date: 2019-09-03 20:03+0500\n"
+"POT-Creation-Date: 2019-09-16 16:31+0500\n"
+"PO-Revision-Date: 2019-09-16 16:31+0500\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -64,35 +64,39 @@ msgstr "Меню"
 msgid "Callback"
 msgstr "Обратный звонок"
 
-#: inc/customizer.php:47
+#: inc/customizer.php:27
 msgid "Extra Site Settings"
 msgstr "Дополнительные настройки сайта"
 
-#: inc/customizer.php:52
+#: inc/customizer.php:32
 msgid "E-mail"
 msgstr "E-mail"
 
-#: inc/customizer.php:59
+#: inc/customizer.php:39
 msgid "Phone"
 msgstr "Телефон"
 
-#: inc/customizer.php:66
+#: inc/customizer.php:46
 msgid "Address"
 msgstr "Адрес"
 
-#: inc/customizer.php:73
+#: inc/customizer.php:53
 msgid "Copyrights"
 msgstr "Копирайты"
 
-#: inc/customizer.php:80
+#: inc/customizer.php:60
+msgid "Privacy Policy link"
+msgstr "Ссылка на Политику конфиденциальности"
+
+#: inc/customizer.php:67
 msgid "Years"
 msgstr "Годы"
 
-#: inc/customizer.php:87
+#: inc/customizer.php:74
 msgid "Enable Advertisement and Analytics Code?"
 msgstr "Включить вывод рекламных и блоков аналитики?"
 
-#: inc/customizer.php:94
+#: inc/customizer.php:81
 msgid "Analytics Code"
 msgstr "Код аналитики"
 
