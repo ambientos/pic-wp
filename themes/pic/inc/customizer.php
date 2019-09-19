@@ -20,7 +20,7 @@ add_action('customize_register', function($wp_customize){
 	 */
 
 	$customize_data = array(
-		'transport' => 'refresh',
+		'transport' => $transport,
 		'sections' => array(
 			'pic_settings' => array(
 				'panel' => '',
