@@ -27,10 +27,6 @@
 	&-form {
 		padding: $grid-gutter-width * 1.5 0 $grid-gutter-width * .5;
 
-		@include media-breakpoint-up("lg") {
-			padding: $grid-gutter-width * 3.5 0 $grid-gutter-width * 1.5;
-		}
-
 		&-title {
 			margin-bottom: 1em;
 			font: {
@@ -38,10 +34,6 @@
 				weight: $font-weight-bold;
 			}
 			text-transform: uppercase;
-
-			@include media-breakpoint-up("lg") {
-				margin-bottom: 2.5em;
-			}
 		}
 
 		&-accept {
@@ -54,6 +46,10 @@
 
 		.form-control {
 			border-color: transparent;
+		}
+
+		textarea.form-control {
+			max-height: 250px;
 		}
 
 		a {

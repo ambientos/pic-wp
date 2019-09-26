@@ -465,12 +465,6 @@ span.wpcf7-list-item:first-child {
     top: 30px;
     right: 0;
     z-index: 2; }
-    @media (min-width: 768px) and (max-width: 1199.98px) {
-      .promo-nav-container {
-        top: 80px; } }
-    @media (min-width: 1200px) {
-      .promo-nav-container {
-        top: 230px; } }
   .promo-nav button {
     margin: 0 9px;
     padding: .14em .51em;
@@ -505,29 +499,23 @@ span.wpcf7-list-item:first-child {
 .promo-item {
   min-height: 500px;
   padding-top: 130px;
+  padding-bottom: 30px;
   color: #fff;
   background-color: #012342;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover; }
-  @media (min-width: 768px) and (max-width: 1199.98px) {
+  @media (min-width: 768px) {
     .promo-item {
       min-height: 600px;
-      padding-top: 200px; } }
-  @media (min-width: 1200px) {
-    .promo-item {
-      min-height: 1010px;
-      padding-top: 360px; } }
+      padding-top: 170px; } }
   .promo-item-title {
     font-size: 1.875rem;
     font-weight: 700;
     text-transform: uppercase; }
-    @media (min-width: 768px) and (max-width: 1199.98px) {
+    @media (min-width: 768px) {
       .promo-item-title {
         font-size: 3em; } }
-    @media (min-width: 1200px) {
-      .promo-item-title {
-        font-size: 4.5rem; } }
     .promo-item-title::after {
       display: block;
       width: 75px;
@@ -556,9 +544,9 @@ span.wpcf7-list-item:first-child {
   @media (min-width: 1200px) {
     .widget {
       top: 230px;
-      margin-top: 14em; }
+      margin-top: 8em; }
       .widget:not(:last-child) {
-        margin-bottom: 14em; } }
+        margin-bottom: 8em; } }
   .widget-title {
     font-size: 1.375rem;
     font-weight: 700;
@@ -684,19 +672,26 @@ span.wpcf7-list-item:first-child {
           padding-bottom: 3em; } }
     @media (min-width: 768px) and (max-width: 1199.98px) {
       .clients-list-item {
-        padding: 3.5em 2em 2em; } }
+        padding: 3.5em 0 2em; } }
     @media (min-width: 1200px) {
       .clients-list-item {
-        padding: 6em 2em 2em; } }
+        padding: 6em 0 2em; } }
     .clients-list-item-thumb {
       margin-bottom: 1.5em; }
       @media (min-width: 768px) {
         .clients-list-item-thumb {
-          min-height: 120px; } }
+          min-height: 80px; } }
+      .clients-list-item-thumb img {
+        width: auto;
+        max-height: 80px; }
     .clients-list-item-name {
       margin: 2em 0;
       font-weight: 700;
       text-transform: uppercase; }
+  .clients-list .owl-nav .owl-prev span,
+  .clients-list .owl-nav .owl-next span {
+    color: #fff;
+    border-color: #fff; }
 
 .product-list {
   margin-top: 3em; }
@@ -756,23 +751,19 @@ span.wpcf7-list-item:first-child {
 
 .contact-form {
   padding: 45px 0 15px; }
-  @media (min-width: 992px) {
-    .contact-form {
-      padding: 105px 0 45px; } }
   .contact-form-title {
     margin-bottom: 1em;
     font-size: 1.125rem;
     font-weight: 700;
     text-transform: uppercase; }
-    @media (min-width: 992px) {
-      .contact-form-title {
-        margin-bottom: 2.5em; } }
   .contact-form-accept {
     margin-top: 1em; }
     .contact-form-accept a {
       text-decoration: underline; }
   .contact-form .form-control {
     border-color: transparent; }
+  .contact-form textarea.form-control {
+    max-height: 250px; }
   .contact-form a {
     color: inherit; }
 
@@ -1047,3 +1038,5 @@ span.wpcf7-list-item:first-child {
   @media (min-width: 1200px) {
     .popup-callback .fancybox-button path {
       fill: #fff; } }
+  .popup-callback textarea.form-control {
+    height: 100px; }

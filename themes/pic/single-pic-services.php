@@ -12,10 +12,10 @@
 
 	<div class="teaser">
 		<div class="row">
+			<?php $video_id = carbon_get_the_post_meta( 's-i' ); ?>
 			<figure class="teaser-thumb col-xl-5 col-lg-6"><?php the_post_thumbnail( 'service-thumb', array( 'class' => 'img-block' ) ); ?></figure>
 			<div class="col-xl-7 col-lg-6">
 				<div class="teaser-content">
-					<div class="teaser-num"><?php printf( '%02d', $post->menu_order ); ?></div>
 					<h3 class="teaser-title">
 						<?php
 

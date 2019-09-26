@@ -53,8 +53,8 @@
 		-webkit-touch-callout: none;
 	}
 	.owl-item img {
-		display: block;
-		width: 100%;
+		//display: block;
+		//width: 100%;
 	}
 
 	.owl-nav.disabled,
@@ -119,6 +119,39 @@
 
 	&.owl-rtl .owl-item {
 		float: right;
+	}
+
+	.owl-nav {
+		position: absolute;
+		right: 0;
+		top: 1.5em;
+
+		.owl-prev span,
+		.owl-next span {
+			display: block;
+			width: $grid-gutter-width * 1.2;
+			height: $grid-gutter-width * 1.2;
+			line-height: $grid-gutter-width * .7;
+			font-family: Georgia;
+			font-size: 60px;
+			color: inherit;
+			border-width: 1px;
+			border-style: solid;
+		}
+
+		.owl-prev.disabled,
+		.owl-next.disabled {
+			cursor: default;
+		}
+
+		.owl-prev.disabled span,
+		.owl-next.disabled span {
+			opacity: .5;
+		}
+
+		.owl-next {
+			margin-left: .5em;
+		}
 	}
 }
 

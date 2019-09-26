@@ -43,9 +43,6 @@
     backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
-    display: block;
-    width: 100%; }
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {
     display: none; }
@@ -89,6 +86,29 @@
     direction: rtl; }
   .owl-carousel.owl-rtl .owl-item {
     float: right; }
+  .owl-carousel .owl-nav {
+    position: absolute;
+    right: 0;
+    top: 1.5em; }
+    .owl-carousel .owl-nav .owl-prev span,
+    .owl-carousel .owl-nav .owl-next span {
+      display: block;
+      width: 36px;
+      height: 36px;
+      line-height: 21px;
+      font-family: Georgia;
+      font-size: 60px;
+      color: inherit;
+      border-width: 1px;
+      border-style: solid; }
+    .owl-carousel .owl-nav .owl-prev.disabled,
+    .owl-carousel .owl-nav .owl-next.disabled {
+      cursor: default; }
+    .owl-carousel .owl-nav .owl-prev.disabled span,
+    .owl-carousel .owl-nav .owl-next.disabled span {
+      opacity: .5; }
+    .owl-carousel .owl-nav .owl-next {
+      margin-left: .5em; }
 
 /* No Js */
 .no-js .owl-carousel {

@@ -23,18 +23,23 @@
 			}
 
 			@include media-breakpoint-between("md", "lg") {
-				padding: 3.5em 2em 2em;
+				padding: 3.5em 0 2em;
 			}
 
 			@include media-breakpoint-up("xl") {
-				padding: 6em 2em 2em;
+				padding: 6em 0 2em;
 			}
 
 			&-thumb {
 				margin-bottom: 1.5em;
 
 				@include media-breakpoint-up("md") {
-					min-height: 120px;
+					min-height: 80px;
+				}
+
+				img {
+					width: auto;
+					max-height: 80px;
 				}
 			}
 
@@ -42,6 +47,14 @@
 				margin: 2em 0;
 				font-weight: $font-weight-bold;
 				text-transform: uppercase;
+			}
+		}
+
+		.owl-nav {
+			.owl-prev span,
+			.owl-next span {
+				color: $white;
+				border-color: $white;
 			}
 		}
 	}

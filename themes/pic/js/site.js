@@ -36,16 +36,57 @@
 	
 	$('.carousel-container').each(function(){
 		var container = $(this),
-			carousel = container.find('.carousel')
+			carousel = container.find('.carousel'),
+			loop = container.data('loop') || 0,
+			nav = container.data('nav') || 0,
+			dotsHide = container.data('dots-hide') || 0,
+			autoHeight = container.data('autoheight') || 0,
+			autoWidth = container.data('autowidth') || 0
 
-		carousel.owlCarousel({
+		options = {
 			items: 1,
 			margin: 0,
-			loop: true,
+			loop: false,
 			nav: false,
 			dots: true,
 			dotsContainer: container.find('.carousel-nav')
-		})
+		}
+
+		if ( loop ) {
+			options.loop = true
+		}
+
+		if ( autoWidth ) {
+			options.margin = 30
+			options.responsive = {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 2
+				},
+				768: {
+					items: 3
+				},
+				900: {
+					items: 4
+				}
+			}
+		}
+
+		if ( nav ) {
+			options.nav = true
+		}
+
+		if ( dotsHide ) {
+			options.dots = false
+		}
+
+		if ( autoHeight ) {
+			options.autoHeight = true
+		}
+
+		carousel.owlCarousel(options)
 	})
 
 

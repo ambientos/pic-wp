@@ -14,14 +14,6 @@
 			top: 30px;
 			right: 0;
 			z-index: 2;
-
-			@include media-breakpoint-between("md", "lg") {
-				top: 80px;
-			}
-			
-			@include media-breakpoint-up("xl") {
-				top: 230px;
-			}
 		}
 
 		button {
@@ -75,7 +67,10 @@
 
 	&-item {
 		min-height: 500px;
-		padding-top: 130px;
+		padding: {
+			top: 130px;
+			bottom: 30px;
+		}
 		color: $white;
 		background: {
 			color: $bg-color;
@@ -84,14 +79,9 @@
 			size: cover;
 		}
 
-		@include media-breakpoint-between("md", "lg") {
+		@include media-breakpoint-up("md") {
 			min-height: 600px;
-			padding-top: 200px;
-		}
-
-		@include media-breakpoint-up("xl") {
-			min-height: 1010px;
-			padding-top: 360px;
+			padding-top: 170px;
 		}
 
 		&-title {
@@ -101,12 +91,8 @@
 			}
 			text-transform: uppercase;
 
-			@include media-breakpoint-between("md", "lg") {
+			@include media-breakpoint-up("md") {
 				font-size: 3em;
-			}
-
-			@include media-breakpoint-up("xl") {
-				font-size: 4.5rem;
 			}
 
 			&::after {

@@ -18,7 +18,7 @@
 	@include media-breakpoint-up("xl") {
 		top: 230px;
 
-		@include widget-margins(14em);
+		@include widget-margins(8em);
 	}
 
 	&-title {

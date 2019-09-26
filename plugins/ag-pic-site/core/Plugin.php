@@ -227,7 +227,7 @@ class Plugin {
 			->set_category( 'cb-blocks', 'Carbon Blocks' )
 			->set_render_callback( function ( $block ) { ?>
 
-			<section class="promo-container carousel-container" data-loop="1">
+			<section class="promo-container carousel-container" data-loop="1" data-autoheight="1">
 				<div class="promo-nav-container">
 					<div class="container">
 						<div class="promo-nav carousel-nav owl-nav"></div>
@@ -357,16 +357,18 @@ class Plugin {
 				<?php $bg_full = wp_get_attachment_url( $block['cl-i'] ); ?>
 				<div class="clients" style="background-image:url(<?php echo esc_url( $bg_full ); ?>)">
 					<div class="container">
-						<div class="clients-list row">
-							<?php foreach ( $block['cl-l'] as $client_item ) : ?>
-								<div class="clients-list-item col-md-3">
-									<figure class="clients-list-item-thumb d-flex justify-content-center align-items-center"><?php echo wp_get_attachment_image( $client_item['cl-l-i'], 'client-thumb' ); ?></figure>
-									<div class="clients-list-item-name"><?php echo esc_html( $client_item['cl-l-t'] ); ?></div>
-									<div class="clients-list-item-info">
-										<?php echo $client_item['cl-l-c']; ?>
+						<div class="clients-list carousel-container" data-autowidth="1" data-nav="1" data-dots-hide="1">
+							<div class="carousel owl-carousel">
+								<?php foreach ( $block['cl-l'] as $client_item ) : ?>
+									<div class="clients-list-item">
+										<figure class="clients-list-item-thumb d-flex justify-content-center align-items-center"><?php echo wp_get_attachment_image( $client_item['cl-l-i'], 'client-thumb' ); ?></figure>
+										<div class="clients-list-item-name"><?php echo esc_html( $client_item['cl-l-t'] ); ?></div>
+										<div class="clients-list-item-info">
+											<?php echo $client_item['cl-l-c']; ?>
+										</div>
 									</div>
-								</div>
-							<?php endforeach; ?>
+								<?php endforeach; ?>
+							</div>
 						</div>
 					</div>
 				</div>
