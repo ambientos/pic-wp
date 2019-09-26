@@ -763,7 +763,7 @@ span.wpcf7-list-item:first-child {
   .contact-form .form-control {
     border-color: transparent; }
   .contact-form textarea.form-control {
-    max-height: 250px; }
+    max-height: 150px; }
   .contact-form a {
     color: inherit; }
 
