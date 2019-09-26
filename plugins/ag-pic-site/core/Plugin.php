@@ -227,7 +227,7 @@ class Plugin {
 			->set_category( 'cb-blocks', 'Carbon Blocks' )
 			->set_render_callback( function ( $block ) { ?>
 
-			<section class="promo-container carousel-container" data-loop="1" data-autoheight="1">
+			<section class="promo-container carousel-container" data-loop="1" data-items="1" data-autoheight="1" data-autowidth="1" data-nav="1" data-dots-hide="1">
 				<div class="promo-nav-container">
 					<div class="container">
 						<div class="promo-nav carousel-nav owl-nav"></div>
@@ -316,11 +316,59 @@ class Plugin {
 								<figure>
 									<?php echo wp_get_attachment_image( $thumb_item['gt-l-i'], 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?>
 									<?php if ( ! empty( $thumb_item['gt-l-d'] ) ) : ?>
-										<figcaption><?php echo esc_html( $thumb_item['gt-l-d'] ); ?></figcaption>
+										<figcaption class="box-item-figcaption"><?php echo esc_html( $thumb_item['gt-l-d'] ); ?></figcaption>
 									<?php endif; ?>
 								</figure>
 							</a>
 						<?php endforeach; ?>
+					</div>
+				</div>
+			</section>
+
+			<?php
+		} );
+
+
+		/**
+		 * Carousel Grid Thumbnails with desctiption Block
+		 */
+
+		Block::make( 'Carousel Grid Thumbnails' )
+			->add_fields( array(
+				Field::make( 'text', 'gt-t', __( 'Title', TEXT_DOMAIN ) ),
+				Field::make( 'complex', 'gt-l', __( 'List', TEXT_DOMAIN ) )
+					->add_fields( array(
+						Field::make( 'image', 'gt-l-i', __( 'Thumbnail', TEXT_DOMAIN ) ),
+						Field::make( 'text', 'gt-l-l', __( 'Link', TEXT_DOMAIN ) ),
+						Field::make( 'text', 'gt-l-d', __( 'Description', TEXT_DOMAIN ) ),
+					) )
+					->set_layout( 'tabbed-horizontal' ),
+			) )
+			->set_icon( 'image-flip-horizontal' )
+			->set_category( 'cb-blocks', 'Carbon Blocks' )
+			->set_render_callback( function ( $block ) { ?>
+
+			<section class="widget">
+				<div class="container">
+					<h2 class="widget-title"><?php echo esc_html( $block['gt-t'] ); ?></h2>
+					<div class="carousel-container" data-autowidth="1" data-nav="1" data-dots-hide="1">
+						<div class="box-carousel carousel owl-carousel d-flex flex-column">
+							<?php foreach ( $block['gt-l'] as $thumb_item ) : ?>
+								<?php
+
+								$thumb_full = ! empty( $thumb_item['gt-l-l'] ) ? esc_attr( $thumb_item['gt-l-l'] ) : wp_get_attachment_url( $thumb_item['gt-l-i'] );
+
+								?>
+								<a href="<?php echo esc_url( $thumb_full ); ?>" data-fancybox="thumbnails" class="d-sm-flex">
+									<figure>
+										<?php echo wp_get_attachment_image( $thumb_item['gt-l-i'], 'grid-thumb', false, array( 'class' => 'img-block' ) ); ?>
+										<?php if ( ! empty( $thumb_item['gt-l-d'] ) ) : ?>
+											<figcaption class="box-item-figcaption"><?php echo esc_html( $thumb_item['gt-l-d'] ); ?></figcaption>
+										<?php endif; ?>
+									</figure>
+								</a>
+							<?php endforeach; ?>
+						</div>
 					</div>
 				</div>
 			</section>

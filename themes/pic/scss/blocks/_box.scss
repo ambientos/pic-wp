@@ -2,7 +2,7 @@
 	&-item {
 		margin-top: $grid-gutter-width;
 
-		figcaption {
+		&-figcaption {
 			margin-top: 1em;
 			font: {
 				size: 1rem;
@@ -117,6 +117,19 @@
 					width: $size;
 					height: $size;
 				}
+			}
+		}
+	}
+
+	&-carousel {
+		.owl-nav {
+			position: static;
+			margin: 1em 0;
+			text-align: center;
+			order: -1;
+
+			@include media-breakpoint-up("sm") {
+				text-align: right;
 			}
 		}
 	}

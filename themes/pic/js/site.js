@@ -37,6 +37,7 @@
 	$('.carousel-container').each(function(){
 		var container = $(this),
 			carousel = container.find('.carousel'),
+			items = container.data('items') || 0,
 			loop = container.data('loop') || 0,
 			nav = container.data('nav') || 0,
 			dotsHide = container.data('dots-hide') || 0,
@@ -58,18 +59,21 @@
 
 		if ( autoWidth ) {
 			options.margin = 30
-			options.responsive = {
-				0: {
-					items: 1
-				},
-				600: {
-					items: 2
-				},
-				768: {
-					items: 3
-				},
-				900: {
-					items: 4
+
+			if ( ! items ) {
+				options.responsive = {
+					0: {
+						items: 1
+					},
+					600: {
+						items: 2
+					},
+					768: {
+						items: 3
+					},
+					900: {
+						items: 4
+					}
 				}
 			}
 		}
