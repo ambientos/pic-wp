@@ -14,15 +14,10 @@
 		}
 	}
 
-	&-title {
-		margin-top: 1.5em;
-		font: {
-			size: 1.125rem;
-			weight: $font-weight-medium;
+	&-logo {
+		img {
+			width: 100%;
 		}
-		line-height: 1;
-		text-transform: uppercase;
-		color: $blue;
 	}
 
 	&-search {
@@ -85,12 +80,7 @@
 
 			&.current-menu-item > a {
 				font-weight: $font-weight-medium;
-				color: $link-hover-color;
 			}
-		}
-
-		a {
-			color: inherit;
 		}
 	}
 

@@ -11,7 +11,6 @@
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 							<img src="<?php bloginfo( 'template_directory' ); ?>/i/logo.svg" width="191" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 						</a>
-						<div class="footer-title"><?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?></div>
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-8">

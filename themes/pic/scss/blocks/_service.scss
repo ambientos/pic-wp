@@ -3,15 +3,17 @@
 		&-item {
 			display: block;
 			position: relative;
-			padding: $grid-gutter-width * .6;
-			color: inherit;
-			background-color: $white;
-			@include transition;
+			padding: $grid-gutter-width $grid-gutter-width * .6;
+			background-color: $blue;
+			overflow: hidden;
+
+			&,
+			&:hover {
+				color: $white;
+			}
 
 			&:hover {
-				color: white;
 				text-decoration: none;
-				background-color: $blue;
 			}
 
 			&-thumb {
@@ -20,16 +22,19 @@
 				top: 0;
 				right: 0;
 				bottom: 0;
-				opacity: 0;
+				opacity: .8;
 				background: {
 					position: 50% 50%;
 					repeat: no-repeat;
 					size: cover;
 				}
+
 				@include transition;
 
 				:hover > & {
-					opacity: .1;
+					opacity: .4;
+					filter: blur(5px);
+					transform: scale(1.1);
 				}
 			}
 
@@ -40,15 +45,28 @@
 			}
 
 			&-title {
-				margin-bottom: 1.5em;
+				margin-bottom: 1em;
 				font: {
 					size: .875rem;
 					weight: $font-weight-bold;
 				}
 				text-transform: uppercase;
+				transform: translateY(1em);
 
-				@include media-breakpoint-up("md") {
-					min-height: 3.6em;
+				@include transition;
+
+				:hover > & {
+					transform: translateY(0);
+				}
+			}
+
+			&-text {
+				opacity: 0;
+
+				@include transition;
+
+				:hover > & {
+					opacity: 1;
 				}
 			}
 
