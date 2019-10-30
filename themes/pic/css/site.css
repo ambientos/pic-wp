@@ -597,6 +597,9 @@ span.wpcf7-list-item:first-child {
   color: #fff;
   background-color: #0365C0; }
 
+.teaser._normal {
+  background-color: #fff; }
+
 .teaser-thumb {
   margin-bottom: 0; }
 
@@ -604,12 +607,13 @@ span.wpcf7-list-item:first-child {
   .teaser-content {
     padding-top: 30px; } }
 
-.teaser-content._featured {
+.teaser-content._normal, .teaser-content._featured {
   padding: 24px 30px;
   font-size: 1.125rem; }
-  @media (min-width: 992px) {
-    .teaser-content._featured {
-      padding-left: 0; } }
+
+@media (min-width: 992px) {
+  .teaser-content._with-thumb {
+    padding-left: 0; } }
 
 .teaser-title {
   margin: .3em 0 1.5em; }
@@ -692,14 +696,10 @@ span.wpcf7-list-item:first-child {
       color: #fff; }
 
 .clients {
-  background-color: #0365C0;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover; }
+  background-color: #fff; }
   .clients-list-item {
     padding: .5em;
-    text-align: center;
-    color: #fff; }
+    text-align: center; }
     @media (max-width: 767.98px) {
       .clients-list-item {
         padding-top: 3em; }
@@ -723,10 +723,6 @@ span.wpcf7-list-item:first-child {
       margin: 2em 0;
       font-weight: 700;
       text-transform: uppercase; }
-  .clients-list .owl-nav .owl-prev span,
-  .clients-list .owl-nav .owl-next span {
-    color: #fff;
-    border-color: #fff; }
 
 .product-list {
   margin-top: 3em; }

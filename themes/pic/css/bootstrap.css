@@ -1853,6 +1853,17 @@ fieldset:disabled a.btn {
       background-color: #fff; }
       .btn-more:not(.btn-primary):hover::after {
         background-image: url("../i/arrow-right-blue.svg"); }
+    .btn-more:not(.btn-primary)._light {
+      color: inherit;
+      border-color: inherit; }
+      .btn-more:not(.btn-primary)._light::after {
+        border-left: 1px solid currentColor;
+        background-image: url("../i/arrow-right-gray.svg"); }
+      .btn-more:not(.btn-primary)._light:hover {
+        color: inherit;
+        background-color: #fff; }
+        .btn-more:not(.btn-primary)._light:hover::after {
+          background-image: url("../i/arrow-right-blue.svg"); }
   .btn-more::after {
     display: block;
     position: absolute;

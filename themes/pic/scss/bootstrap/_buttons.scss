@@ -96,6 +96,27 @@ fieldset:disabled a.btn {
         background-image: url('#{$img-dir}arrow-right-blue.svg');
       }
     }
+
+    &._light {
+      $color: inherit;
+
+      color: inherit;
+      border-color: inherit;
+
+      &::after {
+        border-left: 1px solid currentColor;
+        background-image: url('#{$img-dir}arrow-right-gray.svg');
+      }
+
+      &:hover {
+        color: $color;
+        background-color: $white;
+
+        &::after {
+          background-image: url('#{$img-dir}arrow-right-blue.svg');
+        }
+      }
+    }
   }
 
   &::after {

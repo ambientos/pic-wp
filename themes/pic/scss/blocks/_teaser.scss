@@ -4,6 +4,10 @@
 		background-color: $blue;
 	}
 
+	&._normal {
+		background-color: $white;
+	}
+
 	&-thumb {
 		margin-bottom: 0;
 	}
@@ -15,10 +19,13 @@
 			padding-top: $padding;
 		}
 
+		&._normal,
 		&._featured {
 			padding: $padding * .8 $padding;
 			font-size: 1.125rem;
+		}
 
+		&._with-thumb {
 			@include media-breakpoint-up("lg") {
 				padding-left: 0;
 			}

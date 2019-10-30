@@ -402,8 +402,7 @@ class Plugin {
 				<div class="container">
 					<h2 class="widget-title"><?php echo esc_html( $block['cl-t'] ); ?></h2>
 				</div>
-				<?php $bg_full = wp_get_attachment_url( $block['cl-i'] ); ?>
-				<div class="clients" style="background-image:url(<?php echo esc_url( $bg_full ); ?>)">
+				<div class="clients">
 					<div class="container">
 						<div class="clients-list carousel-container" data-autowidth="1" data-nav="1" data-dots-hide="1">
 							<div class="carousel owl-carousel">

@@ -1,16 +1,10 @@
 .clients {
-	background: {
-		color: $blue;
-		repeat: no-repeat;
-		position: 50% 50%;
-		size: cover;
-	}
+	background-color: $white;
 
 	&-list {
 		&-item {
 			padding: .5em;
 			text-align: center;
-			color: $white;
 
 			@include media-breakpoint-down("sm") {
 				$padding: 3em;
@@ -53,8 +47,8 @@
 		.owl-nav {
 			.owl-prev span,
 			.owl-next span {
-				color: $white;
-				border-color: $white;
+				//color: $white;
+				//border-color: $white;
 			}
 		}
 	}
