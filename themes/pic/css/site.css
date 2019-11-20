@@ -756,10 +756,10 @@ span.wpcf7-list-item:first-child {
           padding: 30px 90px; } }
     .product-list-item-title {
       margin-bottom: 1.8em; }
-    .product-list-item-chars {
-      margin-bottom: 2.5em; }
-      .product-list-item-chars li {
-        margin: 1.5em 0; }
+    .product-list-item-chars li {
+      margin: 1.5em 0; }
+    .product-list-item-more {
+      margin-top: 2.5em; }
 
 .contact-container {
   color: #fff;

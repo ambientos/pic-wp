@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AG Pic Site Plugin 1.0\n"
 "POT-Creation-Date: 2019-10-16 23:58+0500\n"
-"PO-Revision-Date: 2019-10-16 23:58+0500\n"
+"PO-Revision-Date: 2019-11-20 19:58+0500\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -63,7 +63,7 @@ msgstr "Не найдено ни одной услуги в корзине"
 
 #: core/Plugin.php:99 core/Plugin.php:109 core/Plugin.php:148
 msgid "Products"
-msgstr "Продукция"
+msgstr "Выполненные проекты"
 
 #: core/Plugin.php:100
 msgid "Product"

@@ -27,7 +27,7 @@
 										<?php endforeach; ?>
 									</ul>
 								<?php endif; ?>
-								<div class="product-list-item-more"><span class="btn btn-primary btn-more" data-fancybox data-src="#order-product" data-title="<?php echo esc_attr( get_the_title() ); ?>"><?php _e( 'Get Order', 'pic' ); ?></span></div>
+								<?php /*div class="product-list-item-more"><span class="btn btn-primary btn-more" data-fancybox data-src="#order-product" data-title="<?php echo esc_attr( get_the_title() ); ?>"><?php _e( 'Get Order', 'pic' ); ?></span></div */ ?>
 							</div>
 						</div>
 					</div>
