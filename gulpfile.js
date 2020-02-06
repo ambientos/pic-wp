@@ -12,8 +12,9 @@ const   gulp = require('gulp'),
         },
 
         files = {
-            css: [path.dist, path.css, '**', '*.css'].join('/'),
-            scss: [path.src, path.scss, '**', '*.scss'].join('/')
+            php: '**/*.php',
+            css: `${path.dist}/${path.css}/**/*.css`,
+            scss: `${path.src}/${path.scss}/**/*.scss`
         }
 
 
@@ -27,14 +28,22 @@ function browserSync(done) {
 }
 
 
+// BrowserSync Reload
+function browserSyncReload(done) {
+    browsersync.reload()
+
+    done()
+}
+
+
 // CSS task
 function cssGenerate() {
     return gulp
-        .src( files.scss )
+        .src(files.scss)
         .pipe(plumber())
         .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
         .pipe(autoprefixer('last 2 versions'))
-        .pipe(gulp.dest( [path.dist, path.css].join('/') ))
+        .pipe(gulp.dest(`${path.dist}/${path.css}`))
         .pipe(browsersync.stream())
 }
 
@@ -42,6 +51,7 @@ function cssGenerate() {
 // Watch files
 function watchFiles() {
     gulp.watch( files.scss, cssGenerate )
+    gulp.watch([ files.php ], browserSyncReload)
 }
 
 
